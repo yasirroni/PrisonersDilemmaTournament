@@ -6,8 +6,6 @@ def strategy(history, memory):
     Con-man strategy: build trust via tit-for-tat... but if they've been nice to us
     5 times in a row, defect opportunistically (to take advantage of simpletons).
     But don't go overboard - don't cheat repeatedly.
-
-    : param memory : our last choice
     """
     choice = 1
     num_rounds = history.shape[1]
