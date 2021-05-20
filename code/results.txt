@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 npfitt (P1)  VS.  alwaysCooperate (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -3866,3 +3867,5 @@ TOTAL SCORES
 #8: alwaysDefect:    15.983  (1.998 average)
 #9: joss:            15.356  (1.919 average)
 >>>>>>> generated sample h2h csv, which works on Excel and Drive
+=======
+>>>>>>> renamed exampleStrats to strats
