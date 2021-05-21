@@ -18,9 +18,11 @@ def strategy(history, memory):
     def compute_enemy_defectiveness(enemy_memory, constantMul=1):
         return constantMul * sum(enemy_memory) / len(enemy_memory)
 
-    # default choice
+    # default titForTat
     choice = "cooperate"
-
+    if history.shape[1] >= 1 and history[1,-1] == 0: # Choose to defect if and only if the opponent just defected.
+        choice = "defect"
+    
     # first move is to "cooperate"
     if memory == None:
         memory = {}
@@ -49,6 +51,7 @@ def strategy(history, memory):
     if previous_round == 1:
         cooperate_first_move = ['alwaysCooperate', 'detective', 'ftft', 'grimTrigger', 'simpleton', 'titForTat']
         defect_first_move = ['alwaysDefect']
+
         # see what happen after first round
         if history[1,-1] == 0: # enemy defects
             remove_now = cooperate_first_move
@@ -83,23 +86,22 @@ def strategy(history, memory):
         remove_now = ['alwaysCooperate']
         if 0 not in history[0,:]: # We never defect:
             remove_now.extend(['grimTrigger','simpleton','ftft','titForTat'])
-
-        # if history[0,-1] == 1 and history[0,-2] == 1: # We cooperated two times
-            
-        if random.random() <= 0.025:
-            choice = "cooperate"
-        else:
-            choice = "defect"
+        
+        choice = "defect"
+        # if random.random() <= 0.025:
+        #     choice = "cooperate"
+        # else:
+        #     choice = "defect"
 
     # TODO: FORGIVING JOSS, BUT DON'T TOO MUCH
-    if len(memory['possible_enemy']) == 3 and 'joss' in memory['possible_enemy']:
+    # if len(memory['possible_enemy']) == 3 and 'joss' in memory['possible_enemy']:
 
-        enemy_defectiveness = compute_enemy_defectiveness(history[1,:],constantMul=1.618)
+    #     enemy_defectiveness = compute_enemy_defectiveness(history[1,:],constantMul=2)
 
-        if random.random() < enemy_defectiveness:
-            choice = "defect"
-        else:
-            choice = "cooperate"
+    #     if random.random() < enemy_defectiveness:
+    #         choice = "defect"
+    #     else:
+    #         choice = "cooperate"
 
         # maybe fighting with 'joss' better off just forgive him
         # if previous_round%2 == 0:
