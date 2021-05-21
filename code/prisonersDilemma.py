@@ -193,3 +193,28 @@ if __name__ == "__main__":
     # pair = ["mystrategy", "joss"]
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to "+RESULTS_FILE)
+
+    ## MYSTRATEGY VS EVERYONE:
+    EXCEPT_STRATEGY = "grimTrigger"
+    STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER,exceptStrategy=EXCEPT_STRATEGY)
+    print(STRATEGY_LIST)
+    MYSTRATEGY = "mystrategy"
+    RESULTS_FILE = "results_"+MYSTRATEGY+".txt"
+
+    SCRIPT_PATH = pathlib.Path(__file__).parent.absolute()
+    OUTPUT_PATH = os.path.join(SCRIPT_PATH, RESULTS_FILE)
+    if os.path.exists(OUTPUT_PATH):
+        os.remove(OUTPUT_PATH)
+        print("REMOVED: "+OUTPUT_PATH)
+        
+    for strategy in STRATEGY_LIST:
+        f = open(OUTPUT_PATH,"a+")
+        pair = [MYSTRATEGY, strategy]
+        runSinglePairingTournament(STRATEGY_FOLDER, f, pair)
+    print("Done with everything!")
+
+    try: # for safety meassure
+        f.flush()
+        f.close()
+    except:
+        pass
