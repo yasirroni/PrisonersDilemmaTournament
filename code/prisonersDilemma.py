@@ -106,7 +106,7 @@ def outputTournamentResults(f, STRATEGY_LIST, scoreKeeper):
         i = rankings[-1-rank]
         score = scoresNumpy[i]
         scorePer = score/(len(STRATEGY_LIST)-1)
-        f.write("#"+str(rank+1)+": "+pad(STRATEGY_LIST[i]+":",16)+' %.3f'%score+'  (%.3f'%scorePer+" average)\n")
+        f.write("#"+str(rank+1)+": "+pad(STRATEGY_LIST[i]+":",24)+' %.3f'%score+'  (%.3f'%scorePer+" average)\n")
 
 def pad(stri, leng):
     result = stri
@@ -185,6 +185,9 @@ if __name__ == "__main__":
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
     EXCEPT_STRATEGY = []
+    # EXCEPT_STRATEGY = ["grimTrigger"]
+    # EXCEPT_STRATEGY = ["grimTrigger","odd","even","ccd","cdd","random","alwaysDefect","alwaysCooperate"]
+    # EXCEPT_STRATEGY = ["odd","even","ccd","cdd","fastDetective","fastDetectiveSimpleton","mystrategy","sorryJoss","sorryFastDetective","sorryTitForTat"]
     runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, EXCEPT_STRATEGY)
     print("Done with everything! Results file written to "+RESULTS_FILE)
 
@@ -196,9 +199,12 @@ if __name__ == "__main__":
 
     ## MYSTRATEGY VS EVERYONE:
     EXCEPT_STRATEGY = []
+    # EXCEPT_STRATEGY = ["grimTrigger"]
+    # EXCEPT_STRATEGY = ["grimTrigger","odd","even","ccd","cdd","random","alwaysDefect","alwaysCooperate"]
+    # EXCEPT_STRATEGY = ["odd","even","ccd","cdd","fastDetective","fastDetectiveSimpleton","mystrategy","sorryJoss","sorryFastDetective","sorryTitForTat"]
+    MYSTRATEGY = "sorryFastDetective"
+    EXCEPT_STRATEGY.append(MYSTRATEGY)
     STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER,exceptStrategy=EXCEPT_STRATEGY)
-    print(STRATEGY_LIST)
-    MYSTRATEGY = "mystrategy"
     RESULTS_FILE = "results_"+MYSTRATEGY+".txt"
 
     SCRIPT_PATH = pathlib.Path(__file__).parent.absolute()
