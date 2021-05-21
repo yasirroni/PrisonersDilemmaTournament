@@ -18,8 +18,8 @@ def strategy(history, memory):
     num_rounds = history.shape[1]
     testing_schedule = [1, 0, 0, 1, 1]
     max_defection_threshold = Decimal(1) / Decimal(2)  # do not forgive high defections
-    small_defection_window = 8
-    max_local_unprovoked_defections = 2  # too many unprovoked defections? random
+    small_defection_window = 15
+    max_local_unprovoked_defections = 4  # too many unprovoked defections? random
 
     if num_rounds < len(testing_schedule):  # intitial testing phase
         choice = testing_schedule[num_rounds]
