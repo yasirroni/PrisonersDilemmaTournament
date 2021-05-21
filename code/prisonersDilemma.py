@@ -195,7 +195,7 @@ if __name__ == "__main__":
     # print("Done with everything! Results file written to "+RESULTS_FILE)
 
     ## MYSTRATEGY VS EVERYONE:
-    EXCEPT_STRATEGY = "grimTrigger"
+    EXCEPT_STRATEGY = []
     STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER,exceptStrategy=EXCEPT_STRATEGY)
     print(STRATEGY_LIST)
     MYSTRATEGY = "mystrategy"
