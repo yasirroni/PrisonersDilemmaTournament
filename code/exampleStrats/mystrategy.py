@@ -35,7 +35,12 @@ def strategy(history, memory):
             'simpleton', 
             'titForTat',
             'UNKNOWN_STRATEGY'
-            ] 
+            ]
+        memory['used_strategy'] = []
+        memory['current_strategy'] = []
+        memory['reserved_move'] = []
+        memory['testing_enemy'] = []
+
         return choice, memory
 
     previous_round = history.shape[1]
