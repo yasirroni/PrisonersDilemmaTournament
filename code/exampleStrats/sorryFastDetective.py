@@ -132,6 +132,7 @@ def strategy(history, memory):
                 choice = "cooperate"
 
         if memory["strategy"] == "exploit_pattern":
+            choice = "defect"
             if gameLength >= 12:
                 enemy_pattern = history[1,-3:].tolist()
                 if enemy_pattern == [0,0,0]:
@@ -149,9 +150,15 @@ def strategy(history, memory):
                 elif enemy_pattern == [1,0,1,0,1,0]:
                     if self_pattern != [0,1,0,1]:
                         memory["strategy"] = "exploit_pattern"
+                    else:
+                        memory["strategy"] = "asking_peace"
+                        choice = "cooperate"
                 elif enemy_pattern == [0,1,0,1,0,1]:
                     if self_pattern != [1,0,1,0]:
                         memory["strategy"] = "exploit_pattern"
+                    else:
+                        memory["strategy"] = "asking_peace"
+                        choice = "cooperate"
                 elif enemy_pattern == [1,0,0,1,0,0]:
                     memory["strategy"] = "exploit_pattern"
                 elif enemy_pattern == [0,1,0,0,1,0]:
