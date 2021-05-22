@@ -126,8 +126,14 @@ def pad(stri, leng):
     for i in range(len(stri), leng):
         result = result + " "
     return result
+
 def fetch_strategy(inFolder, exceptStrategy=[]):
+    STRATEGY_LIST = []
     script_path = pathlib.Path(__file__).parent.absolute()
+    for file in os.listdir(os.path.join(script_path, inFolder)):
+        if file.endswith(".py") and file[:-3] not in exceptStrategy:
+            STRATEGY_LIST.append(file[:-3])
+    return STRATEGY_LIST
 
 def insertIntoNestedDict(nestedDict, keyA, keyB, value):
     if keyA not in nestedDict:
@@ -141,10 +147,7 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
 
     script_path = pathlib.Path(__file__).parent.absolute()
 
-    STRATEGY_LIST = []
-    for file in os.listdir(os.path.join(script_path, inFolder)):
-        if file.endswith(".py") and file[:-3] not in exceptStrategy:
-            STRATEGY_LIST.append(file[:-3])
+    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=[])
 
     for strategy in STRATEGY_LIST:
         scoreKeeper[strategy] = 0
@@ -172,7 +175,8 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
 
     # head2head csv
     if outFileHead2Head:
-        with open(outFileHead2Head, "w+", newline="") as csvfile:
+        script_path = pathlib.Path(__file__).parent.absolute()
+        with open(os.path.join(script_path, outFileHead2Head), "w+", newline="") as csvfile:
             h2hwriter = csv.writer(csvfile)  # defaults to Excel dialect
             h2hwriter.writerow(
                 [
@@ -224,37 +228,33 @@ if __name__ == "__main__":
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
     EXCEPT_STRATEGY = []
-    # EXCEPT_STRATEGY = ["grimTrigger"]
-    # EXCEPT_STRATEGY = ["grimTrigger","odd","even","ccd","cdd","random","alwaysDefect","alwaysCooperate"]
-    # EXCEPT_STRATEGY = ["odd","even","ccd","cdd","fastDetective","fastDetectiveSimpleton","mystrategy","sorryJoss","sorryFastDetective","sorryTitForTat"]
-    runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, EXCEPT_STRATEGY)
-    print("Done with everything! Results file written to "+RESULTS_FILE)
+    runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, H2H_FILE, EXCEPT_STRATEGY)
+    print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
     pair = ["cleverDetective", "clevererDetective"]
     RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
-    print("Done with everything! Results file written to "+RESULTS_FILE)
-
+    print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## MYSTRATEGY VS EVERYONE:
     EXCEPT_STRATEGY = []
     MYSTRATEGY = "sorryFastDetective"
     EXCEPT_STRATEGY.append(MYSTRATEGY)
-    STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER,exceptStrategy=EXCEPT_STRATEGY)
-    RESULTS_FILE = "results_"+MYSTRATEGY+".txt"
+    STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER, exceptStrategy=EXCEPT_STRATEGY)
+    RESULTS_FILE = "results_" + MYSTRATEGY + ".txt"
 
     SCRIPT_PATH = pathlib.Path(__file__).parent.absolute()
     OUTPUT_PATH = os.path.join(SCRIPT_PATH, RESULTS_FILE)
     if os.path.exists(OUTPUT_PATH):
         os.remove(OUTPUT_PATH)
-        print("REMOVED: "+OUTPUT_PATH)
+        print("REMOVED: " + OUTPUT_PATH)
         
     for strategy in STRATEGY_LIST:
-        f = open(OUTPUT_PATH,"a+")
+        f = open(OUTPUT_PATH, "a+")
         pair = [MYSTRATEGY, strategy]
         runSinglePairingTournament(STRATEGY_FOLDER, f, pair)
-    print("Done with everything!")
+    print("Done with everything! Results file written to " + RESULTS_FILE)
 
     try: # for safety meassure
         f.flush()
