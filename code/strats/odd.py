@@ -1,5 +1,5 @@
 def strategy(history, memory):
     if history.shape[1] % 2 == 0: # even, cooperate in odd
-        return "cooperate", None
+        return 1, None
     else:
-        return "defect", None
+        return 0, None

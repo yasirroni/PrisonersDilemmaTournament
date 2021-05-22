@@ -35,11 +35,11 @@ def strategy(history, memory):
 
     if gameLength >= 4:
         if shallIExploit:
-            choice = "defect"
+            choice = 0
         else:
-            choice = "cooperate"
+            choice = 1
             if (
                 history.shape[1] >= 2 and history[1, -1] == 0 and history[1, -2] == 0
             ):  # We check the TWO most recent turns to see if BOTH were defections, and only then do we defect too.
-                choice = "defect"
+                choice = 0
     return choice, shallIExploit

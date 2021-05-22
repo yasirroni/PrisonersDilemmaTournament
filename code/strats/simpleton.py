@@ -11,10 +11,10 @@
 def strategy(history, memory):
     choice = None
     if history.shape[1] == 0: # We're on the first turn!
-        choice = "cooperate"
+        choice = 1
     else:
-        choice = "cooperate" if history[0,-1] == 1 else "defect" # I will keep doing the same thing as last move!
+        choice = 1 if history[0,-1] == 1 else "defect" # I will keep doing the same thing as last move!
         if history[1,-1] == 0: # If my opponent defected last turn, I'll just do the opposite thing as my last move:
-            choice = "defect" if history[0,-1] == 1 else "cooperate" # I will keep doing the same thing as last move!
+            choice = 0 if history[0,-1] == 1 else "cooperate" # I will keep doing the same thing as last move!
             
     return choice, None

@@ -3,12 +3,12 @@ from decimal import Decimal
 
 def forgivingCopycat(history):
     round = history.shape[1]
-    choice = "cooperate"
+    choice = 1
     if history[1,-1] == 0:
-        choice = "defect"
-    if round > 3 and choice == "defect":
+        choice = 0
+    if round > 3 and choice == 0:
         if history [0, -1] == 1 and history [0,-2] == 0 and history [1, -2] == 1:
-            choice = "cooperate"
+            choice = 1
     return choice
 
 def detective(history, memory, delay):
@@ -23,7 +23,7 @@ def detective(history, memory, delay):
     small_defection_window = 15
     max_local_unprovoked_defections = 4  # too many unprovoked defections? random
     if num_rounds ==0:
-        return "cooperate", memory
+        return 1, memory
 
 
     if num_rounds > 50:
@@ -124,7 +124,7 @@ def strategy(history, memory):
             mem.append(0)
             mem.append("null")
             mem.append(200)
-            return "cooperate", mem
+            return 1, mem
     mem= memory
     if history [1, -1] == 0 and mem[DELAY]>=round:
         mem[DELAY] = round
@@ -132,10 +132,10 @@ def strategy(history, memory):
         (choice, mem[DETECTIVE])=detective(history, mem[DETECTIVE], mem[DELAY]+10)
         return choice, mem
     if mem[GRUDGED]:
-        return "defect", mem
+        return 0, mem
     if mem[ABSOLUTING] and mem[COOLDOWN] >0:
         mem[COOLDOWN]-=1
-        return "cooperate", mem
+        return 1, mem
     if mem[ABSOLUTING] and mem[COOLDOWN] ==0:
         mem[ABSOLUTING]= False
         sin = 0
@@ -144,10 +144,10 @@ def strategy(history, memory):
                          sin +=1
             if sin < 5:
                 mem[ABSOLOTION] = True
-                return "cooperate", mem
+                return 1, mem
             else:
                 mem[GRUDGED] = True
-                return "defect", mem
+                return 0, mem
     if round == 4:
         sin = 0
         for i in range (1, 5):
@@ -165,7 +165,7 @@ def strategy(history, memory):
                      mem[COOLDOWN]=3
                      mem[ABSOLOTION] = False
                      mem[ABSOLUTING] = True
-                     return "cooperate", mem
+                     return 1, mem
                  else:
                      mem[COOLDOWN]=-1
     return forgivingCopycat(history), mem

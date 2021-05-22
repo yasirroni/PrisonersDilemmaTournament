@@ -24,14 +24,14 @@ def strategy(history, memory):
     
     if gameLength >= testingDuration:
         if shallIExploit:
-            choice = "defect"
+            choice = 0
         else: 
             if history[1,-1] == 0: # If my opponent defected last turn, I'll just do the opposite thing as my last move:
-                choice = "defect" if history[0,-1] == 1 else "cooperate" # I will keep doing the same thing as last move!
+                choice = 0 if history[0,-1] == 1 else "cooperate" # I will keep doing the same thing as last move!
             else: # If my opponent not defected last turn
                 if history[0,-1] == 1: # I will keep doing the same thing as last move!
-                    choice = "cooperate" 
+                    choice = 1 
                 else:
-                    choice = "defect"
+                    choice = 0
     
     return choice, shallIExploit

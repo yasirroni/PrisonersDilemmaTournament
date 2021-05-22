@@ -6,8 +6,8 @@ import random
 # Reminder: For the history array, "cooperate" = 1, "defect" = 0
 
 def strategy(history, memory):
-    choice = "cooperate"
+    choice = 1
     if random.random() < 0.10 or (history.shape[1] >= 1 and history[1,-1] == 0):
     # Choose to defect randomly by 10% chance, OR if and only if the opponent just defected.
-        choice = "defect"
+        choice = 0
     return choice, None

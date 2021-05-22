@@ -4,6 +4,6 @@ import random
 
 def strategy(history, memory):
     if random.randint(0,1) == 0:
-        return "cooperate", None
+        return 1, None
     else:
-        return "defect", None
+        return 0, None

@@ -14,9 +14,9 @@ def strategy(history, memory):
     gameLength = history.shape[1]
     
     # titForTat as default
-    choice = "cooperate"
+    choice = 1
     if gameLength >= 1 and history[1,-1] == 0: # Choose to defect if and only if the opponent just defected.
-        choice = "defect"
+        choice = 0
 
     if memory == None:
         memory = {}
@@ -33,25 +33,25 @@ def strategy(history, memory):
                 memory["strategy"] = "check_peace_willingness"
 
         if history[1,-1] == 0: # if enemy just defected
-            choice = "defect"
+            choice = 0
 
             if memory["strategy"] in ["initial", "check_peace_willingness"]:
                 # if fighting titForTat, say sorry
                 if history[0,-2] == 0 and history[1,-1] == 0: # if my defect countered with defect afterwards
-                    choice = "cooperate"
+                    choice = 1
                     memory["strategy"] == "asking_peace"
         else:
 
             # TODO: VS FTFT
             # TODO: VS JOSS
             # if memory["strategy"] == "exploit" and gameLength >= testingDuration+1:
-            #     choice = "defect"
+            #     choice = 0
             if memory["strategy"] == "exploit":
-                choice = "defect"
+                choice = 0
             elif memory["strategy"] == "check_ftft":
-                choice = "cooperate"
+                choice = 1
             else:
-                choice = "cooperate"
+                choice = 1
         
         if memory["strategy"] in ["initial", "check_peace_willingness", "asking_peace"]:
             if gameLength > 4:
@@ -59,86 +59,86 @@ def strategy(history, memory):
                     # check if my two times peace resulted in two times war
                     if history[1,-2] == 0 and history[1,-1] == 0:
                         memory["strategy"] = "titForTat"
-                        choice = "defect"
+                        choice = 0
                     if history[1,-2] == 0 and history[1,-1] == 1:
                         memory["strategy"] = "in_peace"
-                        choice = "cooperate"
+                        choice = 1
                     if history[1,-2] == 1 and history[1,-1] == 0:
                         memory["strategy"] = "titForTat" # confused
-                        choice = "defect"
+                        choice = 0
                     else: # 1 1
                         memory["strategy"] = "in_peace"
-                        choice = "cooperate"
+                        choice = 1
                     if history[0,-4:].tolist() == [1,1,1,1] and history[1,-4:].tolist() == [0,0,0,0]:
                         memory["strategy"] = "defector"
-                        choice = "defect"
+                        choice = 0
                 else:
-                    choice = "cooperate"
+                    choice = 1
 
         if memory["strategy"] == "titForTat":
             if history[1,-1] == 0:
-                choice = "defect"
+                choice = 0
 
             if gameLength > 4:
                 if history[1,-2] == 0 and history[1,-1] == 0 and 1 in history[1,-4:]:
                     memory["strategy"] = "asking_peace"
-                    choice = "cooperate"
+                    choice = 1
 
         if memory["strategy"] == "check_ftft":
             if gameLength >= testingDuration + 1:
                 if history[0,-3] == 0 and history[0,-2] == 0 and history[1,-2] == 1 and history[1,-1] == 0:
                     memory["strategy"] = "exploit_ftft"
                     if history[0,-1] == 0:
-                        choice = "cooperate"
+                        choice = 1
                     else:
-                        choice = "defect"
+                        choice = 0
                 else:
                     memory["strategy"] = "exploit_always_cooperate"
-                    choice = "defect"
+                    choice = 0
         
         if memory["strategy"] == "exploit_ftft":
             if history[0,-1] == 0:
-                choice = "cooperate"
+                choice = 1
             else:
-                choice = "defect"
+                choice = 0
 
             # something wrong, ftft should never defected
             if history[1,-1] == 0:
                 if history[0,-2] == 0 and history[0,-3] == 0:
                     # myfault attacking ftft two times
                     if history[0,-1] == 0:
-                        choice = "cooperate"
+                        choice = 1
                     else:
-                        choice = "defect"
+                        choice = 0
                 else:
                     # really, ftft should never defected
                     memory["strategy"] = "asking_peace"
-                    choice = "cooperate"
+                    choice = 1
 
         if memory["strategy"] == "exploit_always_cooperate":
-            choice = "defect"
+            choice = 0
             
             # something wrong, in always cooperate should never defected
             if history[1,-1] == 0:
                 memory["strategy"] = "asking_peace"
-                choice = "cooperate"
+                choice = 1
 
         if memory["strategy"] == "in_peace":
-            choice = "cooperate"
+            choice = 1
             
             # something wrong, in peace should never defected
             if history[1,-1] == 0:
                 memory["strategy"] = "asking_peace"
-                choice = "cooperate"
+                choice = 1
 
         if memory["strategy"] == "exploit_pattern":
-            choice = "defect"
+            choice = 0
             if gameLength >= 12:
                 enemy_pattern = history[1,-3:].tolist()
                 if enemy_pattern == [0,0,0]:
                     # something wrong, pattern changed
                     memory["strategy"] = "asking_peace"
-                    choice = "cooperate"
+                    choice = 1
 
         # pattern check
         if memory["strategy"] in ["initial", "check_peace_willingness", "asking_peace", "titForTat"]:
@@ -152,13 +152,13 @@ def strategy(history, memory):
                         memory["strategy"] = "exploit_pattern"
                     else:
                         memory["strategy"] = "asking_peace"
-                        choice = "cooperate"
+                        choice = 1
                 elif enemy_pattern == [0,1,0,1,0,1]:
                     if self_pattern != [1,0,1,0]:
                         memory["strategy"] = "exploit_pattern"
                     else:
                         memory["strategy"] = "asking_peace"
-                        choice = "cooperate"
+                        choice = 1
                 elif enemy_pattern == [1,0,0,1,0,0]:
                     memory["strategy"] = "exploit_pattern"
                 elif enemy_pattern == [0,1,0,0,1,0]:
@@ -173,7 +173,7 @@ def strategy(history, memory):
                     memory["strategy"] = "exploit_pattern"
         
         if memory["strategy"] in ["defector", "exploit"]:
-            choice = "defect"
+            choice = 0
 
 
     return choice, memory

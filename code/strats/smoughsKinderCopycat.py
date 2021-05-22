@@ -3,20 +3,20 @@ import numpy as np
 
 def forgivingCopycat(history):
     round = history.shape[1]
-    choice = "cooperate"
+    choice = 1
     if history[1, -1] == 0:
-        choice = "defect"
-    if round > 3 and choice == "defect":
+        choice = 0
+    if round > 3 and choice == 0:
         if history[0, -1] == 1 and history[0, -2] == 0 and history[1, -2] == 1:
-            choice = "cooperate"
+            choice = 1
     return choice
 
 
 def tickedOffCopycat(history):
     round = history.shape[1]
-    choice = "cooperate"
+    choice = 1
     if history[1, -1] == 0 or history[1, -2] == 0:
-        choice = "defect"
+        choice = 0
     return choice
 
 
@@ -32,11 +32,11 @@ def strategy(history, memory):
         pamet.append(False)
         pamet.append(0)
         pamet.append(3)
-        return "cooperate", pamet
+        return 1, pamet
     pamet = memory
 
     if pamet[GRUDGED]:
-        return "defect", pamet
+        return 0, pamet
 
     if pamet[TRUTHWORTHY] == False and pamet[COOLDOWN] > 0:
         pamet[COOLDOWN] -= 1
@@ -67,5 +67,5 @@ def strategy(history, memory):
         else:
             pamet[COOLDOWN] = 7
     if pamet[GRUDGED]:
-        return "defect", pamet
+        return 0, pamet
     return tickedOffCopycat(history), pamet

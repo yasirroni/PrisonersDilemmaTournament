@@ -19,9 +19,9 @@ def strategy(history, memory):
         return constantMul * sum(enemy_memory) / len(enemy_memory)
 
     # default titForTat
-    choice = "cooperate"
+    choice = 1
     if history.shape[1] >= 1 and history[1,-1] == 0: # Choose to defect if and only if the opponent just defected.
-        choice = "defect"
+        choice = 0
     
     # first move is to "cooperate"
     if memory == None:
@@ -55,20 +55,20 @@ def strategy(history, memory):
         # see what happen after first round
         if history[1,-1] == 0: # enemy defects
             remove_now = cooperate_first_move
-            choice = "defect" # go defect and see
+            choice = 0 # go defect and see
         else:
             remove_now = defect_first_move
-            choice = "cooperate" # keep cooperate and see
+            choice = 1 # keep cooperate and see
 
     elif previous_round == 2:
         cooperate_second_move = ['alwaysCooperate', 'ftft', 'grimTrigger', 'simpleton', 'titForTat']
         defect_second_move = ['detective', 'alwaysDefect']
         if history[1,-1] == 0: # enemy defects
             remove_now = cooperate_second_move
-            choice = "defect" # go defect and see
+            choice = 0 # go defect and see
         else:
             remove_now = defect_second_move
-            choice = "cooperate" # keep cooperate and see
+            choice = 1 # keep cooperate and see
     
     elif previous_round == 4:
         if 'detective' in memory['possible_enemy']:
@@ -76,22 +76,22 @@ def strategy(history, memory):
                 remove_now = ['detective']
         
         if history[1,-1] == 0:
-            choice = "defect"
+            choice = 0
 
     elif history[1,-1] == 1: # Opponent just cooperated.
         remove_now = ['alwaysDefect']
-        choice = "cooperate"
+        choice = 1
     
     elif history[1,-1] == 0: # Opponent just defected.
         remove_now = ['alwaysCooperate']
         if 0 not in history[0,:]: # We never defect:
             remove_now.extend(['grimTrigger','simpleton','ftft','titForTat'])
         
-        choice = "defect"
+        choice = 0
         # if random.random() <= 0.025:
-        #     choice = "cooperate"
+        #     choice = 1
         # else:
-        #     choice = "defect"
+        #     choice = 0
 
     # TODO: FORGIVING JOSS, BUT DON'T TOO MUCH
     # if len(memory['possible_enemy']) == 3 and 'joss' in memory['possible_enemy']:
@@ -99,17 +99,17 @@ def strategy(history, memory):
     #     enemy_defectiveness = compute_enemy_defectiveness(history[1,:],constantMul=2)
 
     #     if random.random() < enemy_defectiveness:
-    #         choice = "defect"
+    #         choice = 0
     #     else:
-    #         choice = "cooperate"
+    #         choice = 1
 
         # maybe fighting with 'joss' better off just forgive him
         # if previous_round%2 == 0:
-        #     choice = "cooperate"
+        #     choice = 1
         # else:
-        #     choice = "defect"
+        #     choice = 0
 
-        # choice = "cooperate"
+        # choice = 1
         
 
     remove_possible_enemy(memory, remove_now)

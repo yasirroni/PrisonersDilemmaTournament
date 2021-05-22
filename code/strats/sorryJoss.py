@@ -13,34 +13,34 @@ def strategy(history, memory):
         memory["DEFECT_COMBO_COUNTER"] = 0
         
         # first move
-        choice = "cooperate"
+        choice = 1
 
     # double defect to fight simpleton
     if memory["DEFECT_SET"] == "DOUBLE":
         if memory["DEFECT_COMBO_COUNTER"] == 1:
             memory["DEFECT_COMBO_COUNTER"] = 0
-            choice = "defect"
+            choice = 0
 
             # fast return
             return choice, memory
 
     if history.shape[1] >= 1:
         if history[1,-1] == 0: # if enemy just defected
-            choice = "defect"
+            choice = 0
         else: # if enemy cooperate
             if random.random() < memory["DEFECT_RATE"]:
-                choice = "defect"
+                choice = 0
 
                 # double defect to fight simpleton
                 if memory["DEFECT_SET"] == "DOUBLE":
                     memory["DEFECT_COMBO_COUNTER"] = 1
             else:
-                choice = "cooperate"
+                choice = 1
 
         # if fighting titForTat, say sorry
         if history.shape[1] >= 2:
             if history[0,-2] == 0 and history[1,-1] == 0: # if my defect countered with defect afterwards
-                choice = "cooperate"
+                choice = 1
 
                 # no more random defect
                 memory["DEFECT_RATE"] = 0
