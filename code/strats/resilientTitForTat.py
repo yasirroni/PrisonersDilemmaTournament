@@ -7,7 +7,7 @@ def strategy(history, memory):
         history.shape[1] >= 1
         and history[1, -1] == 0
         and memory is not None
-        and 0 == memory
+        and 1 == memory
     ):
         choice = 0
     return choice, choice

@@ -1,8 +1,8 @@
 # PrisonersDilemmaTournament
 
-This is my CS 269i class project.
+This is my CS 269i class project. Check out my webpage for context! https://htwins.net/prisoners-dilemma/
 
-Watch This Place's awesome videos about iterated Prisoner's Dilemma for context!
+Watch This Place's awesome videos about iterated Prisoner's Dilemma for more context!
 
 https://www.youtube.com/watch?v=t9Lo2fgxWHw
 
@@ -12,6 +12,13 @@ Nicky Case's "The Evolution of Trust" is also super fascinating, but it's not ne
 
 How this works:
 When you run code/prisonersDilemma.py, it will search through all the Python strategy files in code/exampleStrats. Then, it will simulate "Iterated Prisoner's Dilemma" with every possible pairing. (There are (n choose 2) pairings.) After all simulations are done, it will average each strategies' overall score. It will then produce a leaderboard of strategies based on their average performance, and save it to results.txt.
+
+It will also produce headToHead.csv, which tracks the head-to-head performance
+of every strategy against every other strategy. You can import it to Google
+Sheets or Excel and use it to compare how well your strategies score points
+against other strategies. This may be especially useful if you are testing with
+many strategies and do not want to parse results.txt to understand what's
+driving their different performances and defining your meta.
 
 If you'd like to add your own strategy, all you have to do is create a new .py file in the code/exampleStrats folder that follows the same format as the others. Then, when you run code/prisonersDilemma.py, it should automatically include your strategy into the tournament!
 
@@ -44,3 +51,7 @@ Each pairing simulation runs for this many turns:
 200-40*np.log(random.random())
 ```
 This means each game is guaranteed to be at least 200 turns long. But then, for every turn after the 200th, there is an equal probability that the game ends. The probability is very low, so there should be no strategizing to defect on the very last turn consequence-free.
+
+---
+
+Please submit your strategies to this Google Form: https://forms.gle/wWwZY9mmSHF2X34P7 by May 26th, 2021 at 10 PM UTC. Your file can be named whatever you want your strategy to be called, like "superCleverDetective.py", but you must keep it a .py file. Also, do not rename the function header within the file - you must keep it as "def strategy(history, memory):". When I’ve got all your strategies collected in one place, I will combine them with that list of 9 example strategies already provided in the GitHub repo. With these (9 + n) strategies all appearing once in this giant "mosh pit", I will run the program "prisonersDilemma.py". Whoever’s single strategy takes the top spot will win $1,000!  Second place will win $300, and third place will win $100. (Note: There is a small chance one of the 9 default strategies win, but I hope that doesn't happen!)
