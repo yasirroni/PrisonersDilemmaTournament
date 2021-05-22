@@ -8,16 +8,11 @@ import pathlib
 import numpy as np
 from decimal import Decimal  # precise fixed-point arithmetic
 
-STRATEGY_FOLDER = "strats"
-RESULTS_FILE = "results.txt"
-H2H_FILE = "headToHead.csv"
-
 def getVisibleHistory(history, player, turn):
     historySoFar = history[:, :turn].copy()
     if player == 1:
         historySoFar = np.flip(historySoFar, 0)
     return historySoFar
-
 
 def strategyMove(move):
     if type(move) is str:
@@ -25,7 +20,6 @@ def strategyMove(move):
         return 0 if (move in defects) else 1
     else:
         return move
-
 
 def runRound(STRATEGY_FOLDER, pair, minGameLength=200, logMultiplier=40):
     """
@@ -56,8 +50,13 @@ def runRound(STRATEGY_FOLDER, pair, minGameLength=200, logMultiplier=40):
         
     return history, memoryA, memoryB
 
+def tallyRoundScores(history, pointsArray=[[1,5],[0,3]]):
+    """
+    :pointsArray: 2 x 2 points table
+    
+    The i-j-th element of this array is how many points you receive if you do play i, and your opponent does play j.
+    """
 
-def tallyRoundScores(history):
     scoreA = 0
     scoreB = 0
     ROUND_LENGTH = history.shape[1]
@@ -214,7 +213,9 @@ def _runSinglePairingTournament(inFolder, pair):
     return roundHistory, scoresA, scoresB, memoryA, memoryB
 
 if __name__ == "__main__":
-    STRATEGY_FOLDER = "exampleStrats"
+    STRATEGY_FOLDER = "strats"
+    RESULTS_FILE = "results.txt"
+    H2H_FILE = "headToHead.csv"
 
     # seed for repeatability
     SEED = 42
@@ -227,7 +228,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to "+RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # RESULTS_FILE = "results_singles.txt"
-    # pair = ["mystrategy", "joss"]
-    # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
-    # print("Done with everything! Results file written to "+RESULTS_FILE)
+    pair = ["cleverDetective", "clevererDetective"]
+    RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
+    runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
+    print("Done with everything! Results file written to "+RESULTS_FILE)
