@@ -141,7 +141,7 @@ def insertIntoNestedDict(nestedDict, keyA, keyB, value):
     nestedDict[keyA][keyB] = value
 
 def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exceptStrategy=[], singleVersusEveryoneResult=None):
-    print("Starting tournament, reading files from " + inFolder)
+    print("Reading files from " + inFolder)
     scoreKeeper = {}
     headToHead = {}
 
@@ -164,7 +164,8 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
             if os.path.exists(single_output_path):
                 os.remove(single_output_path)
                 print("REMOVED: " + single_output_path)
-       
+    
+    print("Starting tournament...")
     for pair in itertools.combinations(STRATEGY_LIST, r=2):
         [roundHistory, scoresA, scoresB, memoryA, memoryB] = _runSinglePairingTournament(inFolder, pair)
 
@@ -180,13 +181,13 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
             single_output_path = os.path.join(script_path, single_result_file)
 
             with open(single_output_path, "a+") as single_file:
-                outputRoundResults(f, pair, roundHistory, scoresA, scoresB, memoryA, memoryB)
+                outputRoundResults(single_file, pair, roundHistory, scoresA, scoresB, memoryA, memoryB)
             
             single_result_file = "results_" + pair[1] + ".txt"
             single_output_path = os.path.join(script_path, single_result_file)
 
             with open(single_output_path, "a+") as single_file:
-                outputRoundResults(f, [pair[1], pair[0]], np.flip(roundHistory, 0), scoresB, scoresA, memoryB, memoryA)
+                outputRoundResults(single_file, [pair[1], pair[0]], np.flip(roundHistory, 0), scoresB, scoresA, memoryB, memoryA)
 
     outputTournamentResults(f, STRATEGY_LIST, scoreKeeper)
         
@@ -237,6 +238,7 @@ def _runSinglePairingTournament(inFolder, pair):
     return roundHistory, scoresA, scoresB, memoryA, memoryB
 
 if __name__ == "__main__":
+    # files
     STRATEGY_FOLDER = "strats"
     RESULTS_FILE = "results.txt"
     H2H_FILE = "headToHead.csv"
@@ -245,10 +247,25 @@ if __name__ == "__main__":
     SEED = 42
     random.seed(SEED)
 
+    # EXCEPT_STRATEGY
+    NO_PATTERN_BASED_STRATEGY = False
+    if NO_PATTERN_BASED_STRATEGY:
+        EXCEPT_STRATEGY = [
+            "random",
+            "odd",
+            "even",
+            "ccd",
+            "cdd",
+            "fibonacciDefector",
+            "alwaysCooperate",
+            "alwaysDefect"
+            ]
+    else:
+        EXCEPT_STRATEGY = []
+
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
-    EXCEPT_STRATEGY = []
-    SINGLE_VERSUS_EVERYONE_RESULT = False
+    SINGLE_VERSUS_EVERYONE_RESULT = True
     runFullPairingTournament(
         STRATEGY_FOLDER, 
         RESULTS_FILE, 
@@ -264,7 +281,6 @@ if __name__ == "__main__":
     # print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## MYSTRATEGY VS EVERYONE:
-    # EXCEPT_STRATEGY = []
     # MYSTRATEGY = "sorryFastDetective"
     # EXCEPT_STRATEGY.append(MYSTRATEGY)
     # STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER, exceptStrategy=EXCEPT_STRATEGY)
