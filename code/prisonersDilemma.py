@@ -115,7 +115,7 @@ def outputTournamentResults(f, STRATEGY_LIST, scoreKeeper):
             "#"
             + str(rank + 1)
             + ": "
-            + pad(STRATEGY_LIST[i] + ":", 16)
+            + pad(STRATEGY_LIST[i] + ":", 24)
             + " %.3f" % score
             + "  (%.3f" % scorePer
             + " average)\n"
@@ -126,8 +126,14 @@ def pad(stri, leng):
     for i in range(len(stri), leng):
         result = result + " "
     return result
+
 def fetch_strategy(inFolder, exceptStrategy=[]):
+    STRATEGY_LIST = []
     script_path = pathlib.Path(__file__).parent.absolute()
+    for file in os.listdir(os.path.join(script_path, inFolder)):
+        if file.endswith(".py") and file[:-3] not in exceptStrategy:
+            STRATEGY_LIST.append(file[:-3])
+    return STRATEGY_LIST
 
 def insertIntoNestedDict(nestedDict, keyA, keyB, value):
     if keyA not in nestedDict:
@@ -141,10 +147,7 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
 
     script_path = pathlib.Path(__file__).parent.absolute()
 
-    STRATEGY_LIST = []
-    for file in os.listdir(os.path.join(script_path, inFolder)):
-        if file.endswith(".py") and file[:-3] not in exceptStrategy:
-            STRATEGY_LIST.append(file[:-3])
+    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=[])
 
     for strategy in STRATEGY_LIST:
         scoreKeeper[strategy] = 0
@@ -172,7 +175,8 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
 
     # head2head csv
     if outFileHead2Head:
-        with open(outFileHead2Head, "w+", newline="") as csvfile:
+        script_path = pathlib.Path(__file__).parent.absolute()
+        with open(os.path.join(script_path, outFileHead2Head), "w+", newline="") as csvfile:
             h2hwriter = csv.writer(csvfile)  # defaults to Excel dialect
             h2hwriter.writerow(
                 [
@@ -224,11 +228,11 @@ if __name__ == "__main__":
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
     EXCEPT_STRATEGY = []
-    runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, EXCEPT_STRATEGY)
-    print("Done with everything! Results file written to "+RESULTS_FILE)
+    runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, H2H_FILE, EXCEPT_STRATEGY)
+    print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
     pair = ["cleverDetective", "clevererDetective"]
     RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
-    print("Done with everything! Results file written to "+RESULTS_FILE)
+    print("Done with everything! Results file written to " + RESULTS_FILE)
