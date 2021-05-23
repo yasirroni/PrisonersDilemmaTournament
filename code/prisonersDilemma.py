@@ -147,7 +147,7 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
 
     script_path = pathlib.Path(__file__).parent.absolute()
 
-    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=[])
+    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=exceptStrategy)
 
     for strategy in STRATEGY_LIST:
         scoreKeeper[strategy] = 0
@@ -248,9 +248,12 @@ if __name__ == "__main__":
     random.seed(SEED)
 
     # EXCEPT_STRATEGY
-    NO_PATTERN_BASED_STRATEGY = False
+    NO_PATTERN_BASED_STRATEGY = True
+    NO_MACHINE_LEARNING = True
+
+    EXCEPT_STRATEGY = []
     if NO_PATTERN_BASED_STRATEGY:
-        EXCEPT_STRATEGY = [
+        EXCEPT_STRATEGY.extend([
             "random",
             "odd",
             "even",
@@ -259,9 +262,15 @@ if __name__ == "__main__":
             "fibonacciDefector",
             "alwaysCooperate",
             "alwaysDefect"
-            ]
-    else:
-        EXCEPT_STRATEGY = []
+            ])
+    
+    if NO_MACHINE_LEARNING:
+        EXCEPT_STRATEGY.extend([
+            "oracle",
+            "ngrams2",
+            "ngrams2Betrayal",
+            "ngrams3"
+            ])
 
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
@@ -275,7 +284,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["cleverDetective", "clevererDetective"]
+    # pair = ["nprttStudent", "joss"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)
