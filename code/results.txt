@@ -284,7 +284,7 @@ Final score for angery: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for angery: 0
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 angery (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -824,7 +824,7 @@ Final score for AngryPriest: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for AngryPriest: [True, True, False, False, 0]
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 AngryPriest (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -1355,7 +1355,7 @@ Final score for antiJoss: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for antiJoss: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 antiJoss (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -1877,7 +1877,7 @@ Final score for antiJossDynamic: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for antiJossDynamic: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 antiJossDynamic (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -2390,7 +2390,7 @@ Final score for antiJossPeriodic: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for antiJossPeriodic: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 antiJossPeriodic (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -2894,7 +2894,7 @@ Final score for balance: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for balance: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 balance (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -3389,7 +3389,7 @@ Final score for balanceDynamic: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for balanceDynamic: [1, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999]
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 balanceDynamic (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -3869,13 +3869,13 @@ Final memory for best-estDetective: False
 Final memory for nprtt: None
 
 best-estDetective (P1)  VS.  nprttStudent (P2)
-C D C C D C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C C D D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-Final score for best-estDetective: 2.981191222570532915360501567
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for best-estDetective: 2.996865203761755485893416928
 Final score for nprttStudent: 2.996865203761755485893416928
-Winner: nprttStudent
+Tie!!
 Final memory for best-estDetective: False
-Final memory for nprttStudent: {'sin': 3, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 best-estDetective (P1)  VS.  npwtt (P2)
 C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -4346,13 +4346,13 @@ Final memory for betterDetective: False
 Final memory for nprtt: None
 
 betterDetective (P1)  VS.  nprttStudent (P2)
-C D C C D C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C C D D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-Final score for betterDetective: 2.975409836065573770491803279
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for betterDetective: 2.995901639344262295081967213
 Final score for nprttStudent: 2.995901639344262295081967213
-Winner: nprttStudent
+Tie!!
 Final memory for betterDetective: False
-Final memory for nprttStudent: {'sin': 3, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 betterDetective (P1)  VS.  npwtt (P2)
 C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -4820,7 +4820,7 @@ Final score for cleverDetective: 2.987394957983193277310924370
 Final score for nprttStudent: 2.987394957983193277310924370
 Tie!!
 Final memory for cleverDetective: tit-for-tat
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 cleverDetective (P1)  VS.  npwtt (P2)
 C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -5279,7 +5279,7 @@ Final score for clevererDetective: 2.986425339366515837104072398
 Final score for nprttStudent: 2.986425339366515837104072398
 Tie!!
 Final memory for clevererDetective: tit-for-tat
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 clevererDetective (P1)  VS.  npwtt (P2)
 C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -5723,13 +5723,13 @@ Final memory for conMan: None
 Final memory for nprtt: None
 
 conMan (P1)  VS.  nprttStudent (P2)
-C C C C C D C C D C C D C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C 
-C C C C C C D D C D D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C 
-Final score for conMan: 2.840182648401826484018264840
-Final score for nprttStudent: 2.863013698630136986301369863
-Winner: nprttStudent
+C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C 
+C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C 
+Final score for conMan: 2.858447488584474885844748858
+Final score for nprttStudent: 2.858447488584474885844748858
+Tie!!
 Final memory for conMan: None
-Final memory for nprttStudent: {'sin': 32, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 31, 'battle_state': 'third_war', 'strategy': 'nprtt', 'counter': 0, 'strategy_history': []}
 
 conMan (P1)  VS.  npwtt (P2)
 C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C C C D C C C C 
@@ -6170,7 +6170,7 @@ Final score for delayedDetective: 2.987951807228915662650602410
 Final score for nprttStudent: 2.987951807228915662650602410
 Tie!!
 Final memory for delayedDetective: tit-for-tat
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 delayedDetective (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -6596,13 +6596,13 @@ Final memory for detective: False
 Final memory for nprtt: None
 
 detective (P1)  VS.  nprttStudent (P2)
-C D C C D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C C D D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-Final score for detective: 2.979674796747967479674796748
-Final score for nprttStudent: 2.979674796747967479674796748
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for detective: 2.995934959349593495934959350
+Final score for nprttStudent: 2.995934959349593495934959350
 Tie!!
 Final memory for detective: False
-Final memory for nprttStudent: {'sin': 4, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 detective (P1)  VS.  npwtt (P2)
 C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -7025,7 +7025,7 @@ Final score for escalatingTitForTat: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for escalatingTitForTat: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 escalatingTitForTat (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -7439,7 +7439,7 @@ Final score for evilTitForTat: 2.996527777777777777777777778
 Final score for nprttStudent: 2.979166666666666666666666667
 Winner: evilTitForTat
 Final memory for evilTitForTat: None
-Final memory for nprttStudent: {'sin': 3, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 3, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 evilTitForTat (P1)  VS.  npwtt (P2)
 D D C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -7844,7 +7844,7 @@ Final score for FallenAngel: 2.987394957983193277310924370
 Final score for nprttStudent: 2.987394957983193277310924370
 Tie!!
 Final memory for FallenAngel: [True, True, False, False, 0, 'tit-for-tat', 200]
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 FallenAngel (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -8240,7 +8240,7 @@ Final score for FallenAngel2: 2.987288135593220338983050847
 Final score for nprttStudent: 2.987288135593220338983050847
 Tie!!
 Final memory for FallenAngel2: [True, True, False, False, 0, 'tit-for-tat', 180]
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 FallenAngel2 (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -8621,13 +8621,13 @@ Final memory for fastDetective: False
 Final memory for nprtt: None
 
 fastDetective (P1)  VS.  nprttStudent (P2)
-D C C D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C D D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-Final score for fastDetective: 2.982456140350877192982456140
-Final score for nprttStudent: 2.982456140350877192982456140
+D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for fastDetective: 2.996491228070175438596491228
+Final score for nprttStudent: 2.996491228070175438596491228
 Tie!!
 Final memory for fastDetective: False
-Final memory for nprttStudent: {'sin': 4, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 fastDetective (P1)  VS.  npwtt (P2)
 D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -8999,13 +8999,13 @@ Final memory for fastDetectiveSimpleton: False
 Final memory for nprtt: None
 
 fastDetectiveSimpleton (P1)  VS.  nprttStudent (P2)
-D C C D D C D D D C D D D C D D D C D D C D D C D D C D D C D D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D 
-C D D C D D C C D D C C D D C C D D C D D C D D C D D C D D C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-Final score for fastDetectiveSimpleton: 0.7338709677419354838709677419
-Final score for nprttStudent: 2.850806451612903225806451613
-Winner: nprttStudent
+D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for fastDetectiveSimpleton: 2.995967741935483870967741935
+Final score for nprttStudent: 2.995967741935483870967741935
+Tie!!
 Final memory for fastDetectiveSimpleton: False
-Final memory for nprttStudent: {'sin': 129, 'strategy': 'fight_random', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 fastDetectiveSimpleton (P1)  VS.  npwtt (P2)
 D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -9374,7 +9374,7 @@ Final score for forgivingCopycat: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for forgivingCopycat: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 forgivingCopycat (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -9734,7 +9734,7 @@ Final score for ftft: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for ftft: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 ftft (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -10085,7 +10085,7 @@ Final score for grimMoralTitForTat: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for grimMoralTitForTat: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 grimMoralTitForTat (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -10427,7 +10427,7 @@ Final score for grimTrigger: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for grimTrigger: False
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 grimTrigger (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -10754,13 +10754,13 @@ Final memory for joss: None
 Final memory for nprtt: None
 
 joss (P1)  VS.  nprttStudent (P2)
-C C C C C C C C C C D C D D D D D D C C C C C C C D D D D C D C D C C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C D D D D C C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C C C D C D D C D C C C C C C C C C C C D C D C C C C C C D C D C C C C C C C C C C C C C D C D C C C C D D D D C C C C C C C C C C C D C 
-C C C C C C C C C C C D D C C D D C C C C C C C C C D D C C C D C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D D C C C C C C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C C C D C C D C C C C C C C C C C C C C D C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C D D C C C C C C C C C C C C C D 
-Final score for joss: 3.044334975369458128078817734
-Final score for nprttStudent: 2.551724137931034482758620690
+C C C C C C C C C C D C D C D D D D C C C C C C C D D D D C D C D C C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C D D D D C C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C C C D C D D C D C C C C C C C C C C C D C D C C C C C C D C D C C C C C C C C C C C C C D C D C C C C D D D D C C C C C C C C C C C D C 
+C C C C C C C C C C C D C C C D D C C C C C C C C C D D C C C D C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D D C C C C C C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C C C D C C D C C C C C C C C C C C C C D C C C C C C C C D C C C C C C C C C C C C C C C D C C C C C C D D C C C C C C C C C C C C C D 
+Final score for joss: 3.054187192118226600985221675
+Final score for nprttStudent: 2.561576354679802955665024631
 Winner: joss
 Final memory for joss: None
-Final memory for nprttStudent: {'sin': 42, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 41, 'battle_state': 'third_war', 'strategy': 'nprtt', 'counter': 0, 'strategy_history': []}
 
 joss (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C D C D C C C C C C C C C C C C C C C C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
@@ -11084,7 +11084,7 @@ Final score for moralTitForTat: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for moralTitForTat: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 moralTitForTat (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -11393,13 +11393,13 @@ Final memory for mostBestestDetective: False
 Final memory for nprtt: None
 
 mostBestestDetective (P1)  VS.  nprttStudent (P2)
-C D C C D C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C C D D C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-Final score for mostBestestDetective: 2.979661016949152542372881356
+C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+Final score for mostBestestDetective: 2.996610169491525423728813559
 Final score for nprttStudent: 2.996610169491525423728813559
-Winner: nprttStudent
+Tie!!
 Final memory for mostBestestDetective: False
-Final memory for nprttStudent: {'sin': 3, 'strategy': 'forgivingAgent', 'counter': 0}
+Final memory for nprttStudent: {'sin': 1, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 mostBestestDetective (P1)  VS.  npwtt (P2)
 C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -11705,7 +11705,7 @@ Final score for mystrategy: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for mystrategy: {'possible_enemy': ['alwaysCooperate', 'ftft', 'grimTrigger', 'joss', 'random', 'simpleton', 'titForTat', 'UNKNOWN_STRATEGY'], 'used_strategy': [], 'current_strategy': [], 'reserved_move': [], 'testing_enemy': []}
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 mystrategy (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -12002,7 +12002,7 @@ Final score for npfitt: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for npfitt: True
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 npfitt (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -12290,7 +12290,7 @@ Final score for npnntt: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for npnntt: True
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 npnntt (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -12569,7 +12569,7 @@ Final score for nprtt-forgiveOnce: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for nprtt-forgiveOnce: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 nprtt-forgiveOnce (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -12839,7 +12839,7 @@ Final score for nprtt: 3
 Final score for nprttStudent: 3
 Tie!!
 Final memory for nprtt: None
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 
 nprtt (P1)  VS.  npwtt (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -13108,16 +13108,16 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for npwtt: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for npwtt: None
 
 nprttStudent (P1)  VS.  opportunisticDefector (P2)
-C C C C D D C C C C D D C C C C D D D D D D D D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D 
-C C C D D D D C C D D D D C C D D D D D D D D D D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D D C C D D D D D D D D 
-Final score for nprttStudent: 1.429223744292237442922374429
-Final score for opportunisticDefector: 1.543378995433789954337899543
+C C C C D D C C C C D D C C C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
+C C C D D D D C C D D D D C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
+Final score for nprttStudent: 1.041095890410958904109589041
+Final score for opportunisticDefector: 1.155251141552511415525114155
 Winner: opportunisticDefector
-Final memory for nprttStudent: {'sin': 177, 'strategy': 'fight_random', 'counter': 0}
+Final memory for nprttStudent: {'sin': 211, 'battle_state': 'third_war', 'strategy': 'fight_random', 'counter': 0, 'strategy_history': []}
 Final memory for opportunisticDefector: None
 
 nprttStudent (P1)  VS.  periodicCopycat (P2)
@@ -13126,7 +13126,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for periodicCopycat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for periodicCopycat: None
 
 nprttStudent (P1)  VS.  Priest (P2)
@@ -13135,7 +13135,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for Priest: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for Priest: [True, True, False, False, 0]
 
 nprttStudent (P1)  VS.  punitiveDetective (P2)
@@ -13144,7 +13144,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for punitiveDetective: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for punitiveDetective: ('initial_cooperation', 0)
 
 nprttStudent (P1)  VS.  punitiveSelfAwareTitForTat (P2)
@@ -13153,7 +13153,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for punitiveSelfAwareTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for punitiveSelfAwareTitForTat: True
 
 nprttStudent (P1)  VS.  randomHistory (P2)
@@ -13162,7 +13162,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for randomHistory: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for randomHistory: 0
 
 nprttStudent (P1)  VS.  reflectiveTitForTat (P2)
@@ -13171,7 +13171,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for reflectiveTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for reflectiveTitForTat: None
 
 nprttStudent (P1)  VS.  relaxedGrimMoralTitForTat (P2)
@@ -13180,7 +13180,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for relaxedGrimMoralTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for relaxedGrimMoralTitForTat: None
 
 nprttStudent (P1)  VS.  resilientTitForTat (P2)
@@ -13189,7 +13189,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for resilientTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for resilientTitForTat: 1
 
 nprttStudent (P1)  VS.  selfAwareTitForTat (P2)
@@ -13198,7 +13198,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for selfAwareTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for selfAwareTitForTat: None
 
 nprttStudent (P1)  VS.  shortwindow (P2)
@@ -13207,7 +13207,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for shortwindow: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for shortwindow: None
 
 nprttStudent (P1)  VS.  simpleton (P2)
@@ -13216,16 +13216,16 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for simpleton: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for simpleton: None
 
 nprttStudent (P1)  VS.  smartJoss (P2)
-C C C C C C C C C C C C C C C C D D C D D C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C D C C C C D D C C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C D C C D C C D C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C D C C C 
-C C C C C C C C C C C C C C C D C C D D C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C D C C C C D D C C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D C C C C C C C C C C C C C C D C D C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C D C C D C C D C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C D C D C C 
+C C C C C C C C C C C C C C C C D C C C D C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C D C C C C D D C C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C D C C D C C D C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C D C C C 
+C C C C C C C C C C C C C C C D C C C D C C C C C C C C C C D C C C C C C C C C C C C C C D C C C C D C C C C D D C C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C C C C C C C C C C C D C C C C C C C C C C C C C C D C D C C C C C C C C D D C C C C C C C C C C C C C C C C C C C C C D C C D C C D C C C C C C D C C C C C C C C C C C C C C C C C C C C C C C C D C D C C 
 Final score for nprttStudent: 2.879069767441860465116279070
-Final score for smartJoss: 2.902325581395348837209302326
+Final score for smartJoss: 2.925581395348837209302325581
 Winner: smartJoss
-Final memory for nprttStudent: {'sin': 21, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 20, 'battle_state': 'third_war', 'strategy': 'nprtt', 'counter': 0, 'strategy_history': []}
 Final memory for smartJoss: True
 
 nprttStudent (P1)  VS.  smoughCopycat (P2)
@@ -13234,7 +13234,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for smoughCopycat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for smoughCopycat: False
 
 nprttStudent (P1)  VS.  smoughsKinderCopycat (P2)
@@ -13243,7 +13243,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for smoughsKinderCopycat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for smoughsKinderCopycat: [True, False, 0, 3]
 
 nprttStudent (P1)  VS.  sorryFastDetective (P2)
@@ -13252,7 +13252,7 @@ D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 2.986175115207373271889400922
 Final score for sorryFastDetective: 2.986175115207373271889400922
 Tie!!
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for sorryFastDetective: {'strategy': 'in_peace'}
 
 nprttStudent (P1)  VS.  sorryJoss (P2)
@@ -13261,7 +13261,7 @@ C C C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 2.987341772151898734177215190
 Final score for sorryJoss: 2.987341772151898734177215190
 Tie!!
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for sorryJoss: {'DEFECT_RATE': 0, 'DEFECT_SET': 'DOUBLE', 'DEFECT_COMBO_COUNTER': 0}
 
 nprttStudent (P1)  VS.  sorryTitForTat (P2)
@@ -13270,7 +13270,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for sorryTitForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for sorryTitForTat: None
 
 nprttStudent (P1)  VS.  strictPunitiveDetective (P2)
@@ -13279,17 +13279,17 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for strictPunitiveDetective: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for strictPunitiveDetective: ('initial_cooperation', 0)
 
 nprttStudent (P1)  VS.  switcher (P2)
-C C C D D C C D C C C D C C C D C C C D C C C D C C C D C C C D C D D D D D D D D D D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
-C C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-Final score for nprttStudent: 0.3493975903614457831325301205
-Final score for switcher: 4.566265060240963855421686747
+C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C C C D C 
+C C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D 
+Final score for nprttStudent: 2.004016064257028112449799197
+Final score for switcher: 3.248995983935742971887550201
 Winner: switcher
-Final memory for nprttStudent: {'sin': 229, 'strategy': 'fight_random', 'counter': 0}
-Final memory for switcher: [True, 0]
+Final memory for nprttStudent: {'sin': 123, 'battle_state': 'third_war', 'strategy': 'nprtt', 'counter': 0, 'strategy_history': []}
+Final memory for switcher: [False, 0]
 
 nprttStudent (P1)  VS.  tickedOffCopycat (P2)
 C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
@@ -13297,7 +13297,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for tickedOffCopycat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for tickedOffCopycat: None
 
 nprttStudent (P1)  VS.  titForTat (P2)
@@ -13306,7 +13306,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for titForTat: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for titForTat: None
 
 nprttStudent (P1)  VS.  titForTatDelayed (P2)
@@ -13315,7 +13315,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for titForTatDelayed: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for titForTatDelayed: None
 
 nprttStudent (P1)  VS.  uftft (P2)
@@ -13324,7 +13324,7 @@ C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 3
 Final score for uftft: 3
 Tie!!
-Final memory for nprttStudent: {'sin': 0, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 0, 'battle_state': 'first_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for uftft: None
 
 nprttStudent (P1)  VS.  ultimateDetective (P2)
@@ -13333,7 +13333,7 @@ C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 2.987234042553191489361702128
 Final score for ultimateDetective: 2.987234042553191489361702128
 Tie!!
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for ultimateDetective: tit-for-tat
 
 nprttStudent (P1)  VS.  ultimateDetectiveForgiveOnce (P2)
@@ -13342,25 +13342,25 @@ C D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
 Final score for nprttStudent: 2.988505747126436781609195402
 Final score for ultimateDetectiveForgiveOnce: 2.988505747126436781609195402
 Tie!!
-Final memory for nprttStudent: {'sin': 2, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 2, 'battle_state': 'second_peace', 'strategy': None, 'counter': 0, 'strategy_history': []}
 Final memory for ultimateDetectiveForgiveOnce: nprtt
 
 nprttStudent (P1)  VS.  windowed (P2)
-C C C C C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C 
-C C C C C C C C C C D D D D D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C C C D D C C D D C C C C C 
-Final score for nprttStudent: 2.522167487684729064039408867
-Final score for windowed: 2.571428571428571428571428571
+C C C C C C C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C 
+C C C C C C C C C C D D D D D D D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C C C D D C C C C D D C C C 
+Final score for nprttStudent: 2.492610837438423645320197044
+Final score for windowed: 2.591133004926108374384236453
 Winner: windowed
-Final memory for nprttStudent: {'sin': 62, 'strategy': None, 'counter': 0}
+Final memory for nprttStudent: {'sin': 64, 'battle_state': 'third_war', 'strategy': 'nprtt', 'counter': 0, 'strategy_history': []}
 Final memory for windowed: None
 
 nprttStudent (P1)  VS.  worst (P2)
-C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C 
+C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
 D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-Final score for nprttStudent: 0.1534653465346534653465346535
-Final score for worst: 4.386138613861386138613861386
+Final score for nprttStudent: 0.9950495049504950495049504950
+Final score for worst: 1.019801980198019801980198020
 Winner: worst
-Final memory for nprttStudent: {'sin': 201, 'strategy': 'fight_random', 'counter': 0}
+Final memory for nprttStudent: {'sin': 201, 'battle_state': 'first_war', 'strategy': 'fight_random', 'counter': 0, 'strategy_history': ['f', 'i', 'g', 'h', 't', '_', 'd', 'e', 'f', 'e', 'c', 't', 'o', 'r']}
 Final memory for worst: [1, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999, 0.7224999999999999]
 
 npwtt (P1)  VS.  opportunisticDefector (P2)
@@ -17029,20 +17029,20 @@ TOTAL SCORES
 #7: periodicCopycat:         176.906  (2.900 average)
 #8: npwtt:                   176.745  (2.897 average)
 #9: selfAwareTitForTat:      176.741  (2.897 average)
-#10: moralTitForTat:          176.648  (2.896 average)
-#11: sorryTitForTat:          176.559  (2.894 average)
-#12: forgivingCopycat:        176.451  (2.893 average)
-#13: balance:                 176.149  (2.888 average)
-#14: mystrategy:              175.789  (2.882 average)
-#15: titForTat:               175.781  (2.882 average)
-#16: Priest:                  175.771  (2.881 average)
-#17: reflectiveTitForTat:     175.745  (2.881 average)
-#18: npfitt:                  175.636  (2.879 average)
-#19: balanceDynamic:          175.536  (2.878 average)
-#20: AngryPriest:             175.513  (2.877 average)
-#21: smoughsKinderCopycat:    175.131  (2.871 average)
-#22: FallenAngel:             174.721  (2.864 average)
-#23: nprttStudent:            174.415  (2.859 average)
+#10: nprttStudent:            176.675  (2.896 average)
+#11: moralTitForTat:          176.648  (2.896 average)
+#12: sorryTitForTat:          176.559  (2.894 average)
+#13: forgivingCopycat:        176.451  (2.893 average)
+#14: balance:                 176.149  (2.888 average)
+#15: mystrategy:              175.789  (2.882 average)
+#16: titForTat:               175.781  (2.882 average)
+#17: Priest:                  175.771  (2.881 average)
+#18: reflectiveTitForTat:     175.745  (2.881 average)
+#19: npfitt:                  175.636  (2.879 average)
+#20: balanceDynamic:          175.536  (2.878 average)
+#21: AngryPriest:             175.513  (2.877 average)
+#22: smoughsKinderCopycat:    175.131  (2.871 average)
+#23: FallenAngel:             174.721  (2.864 average)
 #24: FallenAngel2:            174.242  (2.856 average)
 #25: antiJoss:                174.004  (2.853 average)
 #26: smoughCopycat:           173.648  (2.847 average)
@@ -17061,24 +17061,24 @@ TOTAL SCORES
 #39: delayedDetective:        167.240  (2.742 average)
 #40: tickedOffCopycat:        166.814  (2.735 average)
 #41: titForTatDelayed:        165.322  (2.710 average)
-#42: conMan:                  161.658  (2.650 average)
-#43: best-estDetective:       161.598  (2.649 average)
+#42: conMan:                  161.676  (2.650 average)
+#43: best-estDetective:       161.613  (2.649 average)
 #44: sorryFastDetective:      161.370  (2.645 average)
-#45: detective:               160.937  (2.638 average)
-#46: mostBestestDetective:    159.914  (2.622 average)
+#45: detective:               160.954  (2.639 average)
+#46: mostBestestDetective:    159.931  (2.622 average)
 #47: shortwindow:             159.269  (2.611 average)
-#48: smartJoss:               158.809  (2.603 average)
+#48: smartJoss:               158.832  (2.604 average)
 #49: evilTitForTat:           157.708  (2.585 average)
-#50: betterDetective:         157.108  (2.576 average)
-#51: switcher:                155.908  (2.556 average)
-#52: fastDetective:           155.749  (2.553 average)
-#53: uftft:                   155.658  (2.552 average)
-#54: ftft:                    153.050  (2.509 average)
-#55: strictPunitiveDetective: 152.587  (2.501 average)
-#56: fastDetectiveSimpleton:  152.038  (2.492 average)
+#50: betterDetective:         157.128  (2.576 average)
+#51: fastDetective:           155.763  (2.553 average)
+#52: uftft:                   155.658  (2.552 average)
+#53: switcher:                154.590  (2.534 average)
+#54: fastDetectiveSimpleton:  154.300  (2.530 average)
+#55: ftft:                    153.050  (2.509 average)
+#56: strictPunitiveDetective: 152.587  (2.501 average)
 #57: grimTrigger:             149.832  (2.456 average)
 #58: punitiveDetective:       148.826  (2.440 average)
-#59: joss:                    131.744  (2.160 average)
-#60: windowed:                126.914  (2.081 average)
-#61: opportunisticDefector:   99.616  (1.633 average)
-#62: worst:                   80.783  (1.324 average)
+#59: joss:                    131.754  (2.160 average)
+#60: windowed:                126.933  (2.081 average)
+#61: opportunisticDefector:   99.228  (1.627 average)
+#62: worst:                   77.417  (1.269 average)

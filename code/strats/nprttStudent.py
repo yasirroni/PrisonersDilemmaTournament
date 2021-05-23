@@ -8,20 +8,23 @@ def strategy(history, memory):
     if memory == None:
         memory = {}
         memory["sin"] = 0
+        memory["battle_state"] = "first_peace"
         memory["strategy"] = None
         memory["counter"] = 0
+        memory["strategy_history"] = []
         choice = 1
 
         return choice, memory
 
     MAX_DEFECTION_THRESHOLD = Decimal(1) / Decimal(2)
+    MAX_DEFECTION_THRESHOLD_PEACEFULL = Decimal(3) / Decimal(4)
     DETECTIVE_WINDOW = 3
-    TEST_DETECTIVE_SCHEDULE = [0, 0]
+    TEST_DETECTIVE_SCHEDULE = [0]
     SHORT_WINDOW = 4
     MEDIUM_WINDOW = 8
     LONG_WINDOW = 16
     VERY_LONG_WINDOW = 32
-    RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
+    RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.6)
     num_rounds = history.shape[1] # elapsed round
    
     # get oponets last move
@@ -42,31 +45,54 @@ def strategy(history, memory):
         # add sin counter
         memory["sin"] += 1
 
-        # maybe fighting detective?
-        if num_rounds <= DETECTIVE_WINDOW:
-            if memory["sin"] <= 2 and memory["strategy"] != "detective":
-                # enemy first time to defect
-                memory["strategy"] = "detective"
-                memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
+        if memory["sin"] == 1:
+            memory["battle_state"] = "first_war"
+            choice = 0
+            memory["strategy"] = "peaceMaker"
+            return choice, memory
 
-        # maybe fighting delayedDetective?
-        if num_rounds > DETECTIVE_WINDOW:
-            if memory["sin"] <= 2 and memory["strategy"] != "detective":
-                # enemy first time to defect
-                memory["strategy"] = "detective"
-                memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
+
+        # second betrayal?
+        if memory["battle_state"] == "second_peace":
+            memory["battle_state"] = "second_war"
+            memory["strategy"] = "nprtt-peacefull"
+            
+        if memory["battle_state"] == "third_peace":
+            memory["battle_state"] = "third_war"
+            memory["strategy"] = "nprtt"
+
+
+        # # maybe fighting detective?
+        # if num_rounds <= DETECTIVE_WINDOW:
+        #     if memory["sin"] <= 2 and "detective" not in memory["strategy_history"]:
+        #         # enemy first time to defect
+        #         memory["strategy"] = "detective"
+        #         memory["strategy_history"].extend(memory["strategy"])
+        #         memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
+
+        # # maybe fighting delayedDetective?
+        # if num_rounds > DETECTIVE_WINDOW:
+        #     if memory["sin"] <= 2 and "detective" not in memory["strategy_history"]:
+        #         # enemy first time to defect
+        #         memory["strategy"] = "detective"
+        #         memory["strategy_history"].extend(memory["strategy"])
+        #         memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
 
         # maybe fighting defector?
         if num_rounds == SHORT_WINDOW:
             if memory["sin"] == num_rounds:
                 memory["strategy"] = "fight_defector"
+                memory["strategy_history"].extend(memory["strategy"])
 
         # forgive early stage
         if num_rounds <= LONG_WINDOW:
             if memory["strategy"] == None:
-                choice = 1
-                memory["strategy"] = "forgivingAgent"
-        elif memory["strategy"] == "forgivingAgent":
+                if "peaceMaker" not in memory["strategy_history"]:
+                    choice = 1
+                    memory["strategy"] = "peaceMaker"
+                    memory["strategy_history"].extend(memory["strategy"])
+
+        elif memory["strategy"] == "peaceMaker":
             memory["strategy"] = None
 
         # maybe fighting random?
@@ -74,8 +100,23 @@ def strategy(history, memory):
             enemy_moves = history[1, :]
             flipped_enemy_move = numpy.abs(enemy_moves - 1)
             defection_rate_medium_window = numpy.average(flipped_enemy_move)
-            if defection_rate_medium_window >= (RANDOM_DEFECTION_RATE_THRESHOLD):
+            if defection_rate_medium_window > (RANDOM_DEFECTION_RATE_THRESHOLD):
                 memory["strategy"] = "fight_random"
+
+    if memory["battle_state"] == "peaceMaker":
+        if our_last_move == 1:
+            memory["strategy"] == "nprtt"
+
+    if memory["battle_state"] == "first_war":
+        # peace achived
+        if our_last_move == 1 and opponents_last_move == 1:
+            memory["battle_state"] = "second_peace"
+            memory["strategy"] = None
+
+    if memory["battle_state"] == "second_war":
+        if our_last_move == 1 and opponents_last_move == 1:
+            memory["battle_state"] = "third_peace"
+            memory["strategy"] = None
 
     if memory["strategy"] == "detective":
         # most detective is either:
@@ -103,21 +144,30 @@ def strategy(history, memory):
 
         # random shold never always defect
         if numpy.sum(enemy_moves) <= 0.1: # <= 0 but avoiding floating error
-            memory["strategy"] == None
-            choice = 1
+            memory["strategy"] == nprtt
+
+    if memory["strategy"] == "nprtt-peacefull":
+        choice, _ = nprtt(
+            history, 
+            None, 
+            num_rounds, 
+            opponents_last_move, 
+            our_second_last_move, 
+            MAX_DEFECTION_THRESHOLD_PEACEFULL
+        )
 
     # default strategy
     if (
-        (num_rounds <= LONG_WINDOW and memory["strategy"] == None)
-        or memory["strategy"] == "forgivingAgent"
+        (num_rounds <= LONG_WINDOW and memory["strategy"] == None and "peaceMaker" not in memory["strategy_history"])
+        or memory["strategy"] == "peaceMaker"
     ):
-        # forgivingAgent
-        choice, _ = forgivingAgent(history, memory)
+        # peaceMaker
+        choice, _ = peaceMaker(history, memory)
     elif (
         memory["strategy"] == None
         or memory["strategy"] == "nprtt"
         ):
-        
+
         choice, _ = nprtt(
             history, 
             None, 
@@ -185,7 +235,7 @@ def nprtt(history, memory, num_rounds, opponents_last_move, our_second_last_move
 
     return choice, None
 
-def forgivingAgent(history, memory):
+def peaceMaker(history, memory):
     num_rounds = history.shape[1]
     choice = 1 # default is play nice
     if history[1, -1] == 0:
@@ -196,10 +246,16 @@ def forgivingAgent(history, memory):
         choice = 0
     if num_rounds > 3 and choice == 0:
         # forgive
-        if history[0, -2] == 0:
+        if history[0, -2] == 0 or history[0, -1]:
             # [
             #   [0, X],
             #   [1, X]
             # ]
+            # or
+            # [
+            #   [0],
+            #   [X]
+            # ]
             choice = 1
+
     return choice, memory

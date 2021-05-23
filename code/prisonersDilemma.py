@@ -248,28 +248,39 @@ if __name__ == "__main__":
     random.seed(SEED)
 
     # EXCEPT_STRATEGY
-    NO_PATTERN_BASED_STRATEGY = True
+    NO_ALWAYS = True
+    NO_PURE_RANDOM = True
     NO_MACHINE_LEARNING = True
+    NO_PATTERN_BASED_STRATEGY = True
 
     EXCEPT_STRATEGY = []
-    if NO_PATTERN_BASED_STRATEGY:
+
+    if NO_ALWAYS:
         EXCEPT_STRATEGY.extend([
-            "random",
-            "odd",
-            "even",
-            "ccd",
-            "cdd",
-            "fibonacciDefector",
             "alwaysCooperate",
             "alwaysDefect"
             ])
     
+    if NO_PURE_RANDOM:
+        EXCEPT_STRATEGY.extend([
+            "random",
+            ])
+
     if NO_MACHINE_LEARNING:
         EXCEPT_STRATEGY.extend([
             "oracle",
             "ngrams2",
             "ngrams2Betrayal",
             "ngrams3"
+            ])
+
+    if NO_PATTERN_BASED_STRATEGY:
+        EXCEPT_STRATEGY.extend([
+            "odd",
+            "even",
+            "ccd",
+            "cdd",
+            "fibonacciDefector",
             ])
 
     ## FULL PAIRING TOURNAMENT:
@@ -284,13 +295,13 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["nprttStudent", "joss"]
+    # pair = ["nprttStudent", "opportunisticDefector"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## MYSTRATEGY VS EVERYONE:
-    # MYSTRATEGY = "sorryFastDetective"
+    # MYSTRATEGY = "nprttStudent"
     # EXCEPT_STRATEGY.append(MYSTRATEGY)
     # STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER, exceptStrategy=EXCEPT_STRATEGY)
     # RESULTS_FILE = "results_" + MYSTRATEGY + ".txt"
