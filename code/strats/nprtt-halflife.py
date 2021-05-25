@@ -1,6 +1,5 @@
 from decimal import Decimal
 import numpy
-import random
 
 
 def strategy(history, memory):
@@ -36,8 +35,7 @@ def strategy(history, memory):
     our_second_last_move = history[0, -2] if num_rounds >= 2 else 1
 
     # if opponent defects more often, then screw 'em
-    if memory == None:
-        memory = 0.5 + 0.5 * numpy.power(0.5,(num_rounds/HALF_LIFE))
+    MAX_DEFECTION_THRESHOLD = 0.5 + 0.5 * numpy.power(0.5,(num_rounds/HALF_LIFE))
 
     opponent_history = history[1, 0:num_rounds]
     if num_rounds == 0:
@@ -48,7 +46,7 @@ def strategy(history, memory):
             num_rounds
         )
 
-    be_patient = opponent_defection_rate <= Decimal(memory)
+    be_patient = opponent_defection_rate <= Decimal(MAX_DEFECTION_THRESHOLD)
 
     choice = (
         1

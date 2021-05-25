@@ -1,7 +1,6 @@
 from decimal import Decimal
 import numpy
 
-
 # nprtt but have some experience about others
 def strategy(history, memory):
 
@@ -58,7 +57,7 @@ def strategy(history, memory):
             memory["sin"] += 1
             memory["battle_state"] = "war_started"
             memory["num_war"] += 1
-            memory["strategy"] = "peaceMaker"
+            memory["strategy"] = "nprtt_halflife"
             memory["strategy_history"].extend(memory["strategy"])
             choice = 0
             return choice, memory
@@ -99,23 +98,25 @@ def strategy(history, memory):
                     memory["previous_strategy"] = memory["strategy"]
                     memory["strategy"] = "fight_defector"
                     memory["strategy_history"].extend(memory["strategy"])
+            
+            # TODO: detect opportunistic defector
 
     # strategy decision
     if memory["battle_state"] == "war_started":
         if memory["num_war"] == 1:
             memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] = "peaceMaker"
+            memory["strategy"] = "nprtt_halflife"
             memory["strategy_history"].extend(memory["strategy"])
             memory["counter"] = 1 # one time to attack
         elif memory["num_war"] == 2:
             # second betrayal strategy
             memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] = "nprtt-peacefull"
+            memory["strategy"] = "nprtt_halflife"
             memory["strategy_history"].extend(memory["strategy"])
         elif memory["num_war"] >= 3:
             # third++ betrayal
             memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] = "nprtt"
+            memory["strategy"] = "nprtt_halflife"
             memory["strategy_history"].extend(memory["strategy"])
     elif memory["battle_state"] == "war":
         pass # no need to change strategy
@@ -124,7 +125,7 @@ def strategy(history, memory):
 
     # strategy execution
     # I've asking for peace
-    if memory["strategy"] == "peaceMaker":
+    if memory["strategy"] == "nprtt_halflife":
         if memory["counter"] == 1:
             # you defect, i defect
             memory["counter"] -= 1
@@ -133,18 +134,13 @@ def strategy(history, memory):
         elif memory["counter"] == 0:
             # i have defect last turn, i've done my job
             memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] = "nprtt"
+            memory["strategy"] = "nprtt_halflife"
             memory["strategy_history"].extend(memory["strategy"])
 
     # back to default strategy
     if memory["battle_state"] == "peace_started":
         memory["previous_strategy"] = memory["strategy"]
         memory["strategy"] = None
-
-    # if memory["battle_state"] == "second_war":
-    #     if our_last_move == 1 and opponents_last_move == 1:
-    #         memory["battle_state"] = "third_peace"
-    #         memory["strategy"] = None
 
     if memory["strategy"] == "fight_defector":
         if opponents_last_move == 1:
@@ -162,46 +158,19 @@ def strategy(history, memory):
         # random should never always defect
         if numpy.sum(enemy_moves) <= 0.1: # <= 0 but avoiding floating error
             memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] == "nprtt"
+            memory["strategy"] == "nprtt_halflife"
 
-    if memory["strategy"] == "nprtt-peacefull":
-        choice, _ = nprtt(
-            history, 
-            None, 
-            num_rounds, 
-            opponents_last_move, 
-            our_second_last_move, 
-            MAX_DEFECTION_THRESHOLD_PEACEFULL
-        )
+    if memory["strategy"] == "fight_opportunist":
+        choice, _ = sorryOpportunisticDefector()
 
     # default strategy
-    if (
-        (num_rounds <= LONG_WINDOW and memory["strategy"] == None and "peaceMaker" not in memory["strategy_history"])
-        or memory["strategy"] == "peaceMaker"
-    ):
-        # peaceMaker
-        choice, _ = peaceMaker(history, memory)
-    elif (
-        memory["strategy"] == None
-        or memory["strategy"] == "nprtt"
-        ):
+    if memory["strategy"] == None or memory["strategy"] == "nprtt_halflife":
+        choice, _ = nprtt_halflife(history, None)
 
-        choice, _ = nprtt(
-            history, 
-            None, 
-            num_rounds, 
-            opponents_last_move, 
-            our_second_last_move, 
-            MAX_DEFECTION_THRESHOLD
-            )
-    try:
-        return choice, memory
-    except:
-        print(memory)
-        print(choice)
+    return choice, memory
 
 
-def nprtt(history, memory, num_rounds, opponents_last_move, our_second_last_move, defection_threshold=0.5):
+def nprtt_halflife(history, memory):
     """
     Nice Patient Reflective Tit for Tat (NPRTT):
         1. Nice: Never initiate defection, else face the wrath of the Grudge.
@@ -226,6 +195,16 @@ def nprtt(history, memory, num_rounds, opponents_last_move, our_second_last_move
     average for that group of 3, vs. 1 point on average for a series of D/D. This also
     guides the 1/2 cutoff for the Reflective trait.
     """
+    HALF_LIFE = 20
+
+    num_rounds = history.shape[1]
+
+    opponents_last_move = history[1, -1] if num_rounds >= 1 else 1
+    our_second_last_move = history[0, -2] if num_rounds >= 2 else 1
+
+    # if opponent defects more often, then screw 'em
+    MAX_DEFECTION_THRESHOLD = 0.5 + 0.5 * numpy.power(0.5,(num_rounds/HALF_LIFE))
+
     opponent_history = history[1, 0:num_rounds]
     if num_rounds == 0:
         opponent_defection_rate = 0
@@ -235,44 +214,46 @@ def nprtt(history, memory, num_rounds, opponents_last_move, our_second_last_move
             num_rounds
         )
 
-    # be patient?
-    if opponent_defection_rate <= defection_threshold:
-        be_patient = True
-    else:
-        be_patient = False
+    be_patient = opponent_defection_rate <= Decimal(MAX_DEFECTION_THRESHOLD)
 
     choice = (
         1
-        if (
-            opponents_last_move == 1 
-            or (be_patient and our_second_last_move == 0)
-            )
+        if (opponents_last_move == 1 or (be_patient and our_second_last_move == 0))
         else 0
     )
 
-    return choice, None
+    return choice, memory
 
-def peaceMaker(history, memory):
-    num_rounds = history.shape[1]
-    choice = 1 # default is play nice
-    if history[1, -1] == 0:
-        # [
-        #   [X],
-        #   [0]
-        # ]
+def sorryOpportunisticDefector(history, memory):
+    num_rounds = history.shape[1] # elapsed round
+
+    # get oponets last move
+    if num_rounds >= 1:
+        our_last_move = history[0, -1]
+        opponents_last_move = history[1, -1]
+    else:
+        our_last_move = 1
+        opponents_last_move = 1
+
+    if num_rounds >= 2:
+        our_second_last_move = history[0, -2]
+        opponents_second_last_move = history[1, -2]
+    else:
+        our_second_last_move = 1
+        opponents_second_last_move = 1
+
+    # default
+    choice = 1
+    if opponents_last_move == 0:
+        # counter defect with defect
         choice = 0
-    if num_rounds > 3 and choice == 0:
-        # forgive
-        if history[0, -2] == 0 or history[0, -1]:
-            # [
-            #   [0, X],
-            #   [1, X]
-            # ]
-            # or
-            # [
-            #   [0],
-            #   [X]
-            # ]
+        if our_second_last_move == 0:
+            # forgive if it might be because our previous defect
             choice = 1
+
+    else: # opponents_last_move == 1
+        if our_last_move == 1:
+            # opportuny
+            choice = 0
 
     return choice, memory
