@@ -5,7 +5,7 @@ def strategy(history, memory):
     choice = 1
 
     if history.shape[1] >= 1:
-        # if enemy defected ravange
+        # if enemy defected revange
         if history[1,-1] == 0: 
             choice = 0
 
