@@ -42,6 +42,7 @@ def strategy(history, memory):
 
     if num_rounds > WINDOW_LENGTH:
         opponent_history = history[1, -WINDOW_LENGTH:]
+        num_rounds = WINDOW_LENGTH
     else:
         opponent_history = history[1, 0:num_rounds]
     
