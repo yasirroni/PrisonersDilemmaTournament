@@ -45,9 +45,6 @@ def strategy(history, memory):
             num_rounds
         )
 
-        print(opponent_stats)
-        print(opponent_defection_rate)
-
     be_patient = opponent_defection_rate <= MAX_DEFECTION_THRESHOLD
 
     choice = (
