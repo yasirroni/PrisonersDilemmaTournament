@@ -8,12 +8,13 @@ def strategy(history, memory):
     LONG_WINDOW = 16
     VERY_LONG_WINDOW = 32
 
+
+
     RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
     TEST_RANDOM_SCHEDULE =   [0, 0, 0, 1, 1, 1, 0, 1]
     EXPECTED_MOVES_NON_RANDOM = [0, 0, 0, 1, 1, 1, 0] # expected moves from non random
     EXPECTED_MOVES_DEFECTOR_2 = [0, 0, 0, 1, 0, 0, 0] # expected moves from defector-2 or joss
     EXPECTED_MOVES_DEFECTOR_3 = [0, 0, 0, 1, 1, 0, 0] # expected moves from defector-3 or joss
-    
     num_rounds = history.shape[1] # elapsed round
 
     if num_rounds == 0:
@@ -90,7 +91,7 @@ def strategy(history, memory):
                 "test_random" not in memory["strategy_history"]
                 and "fight_random" not in memory["strategy_history"]
             ):
-                if num_rounds >= LONG_WINDOW:
+                if num_rounds >= VERY_LONG_WINDOW:
                     enemy_moves = history[1, :]
                     flipped_enemy_move = numpy.abs(enemy_moves - 1)
                     defection_rate_medium_window = numpy.average(flipped_enemy_move)
@@ -107,6 +108,7 @@ def strategy(history, memory):
                     memory["previous_strategy"] = memory["strategy"]
                     memory["strategy"] = "fight_defector"
                     if "fight_defector" not in memory["strategy"]:
+                        memory["strategy_history"].append(memory["strategy"])
                         memory["strategy_history"].append(memory["strategy"])
             
             # TODO: detect opportunistic defector
@@ -209,5 +211,39 @@ def nprtt_halflife(history, memory):
         if (opponents_last_move == 1 or (be_patient and our_second_last_move == 0))
         else 0
     )
+
+    return choice, memory
+
+def sorryOpportunisticDefector(history, memory):
+    num_rounds = history.shape[1] # elapsed round
+
+    # get oponets last move
+    if num_rounds >= 1:
+        our_last_move = history[0, -1]
+        opponents_last_move = history[1, -1]
+    else:
+        our_last_move = 1
+        opponents_last_move = 1
+
+    if num_rounds >= 2:
+        our_second_last_move = history[0, -2]
+        opponents_second_last_move = history[1, -2]
+    else:
+        our_second_last_move = 1
+        opponents_second_last_move = 1
+
+    # default
+    choice = 1
+    if opponents_last_move == 0:
+        # counter defect with defect
+        choice = 0
+        if our_second_last_move == 0:
+            # forgive if it might be because our previous defect
+            choice = 1
+
+    else: # opponents_last_move == 1
+        if our_last_move == 1:
+            # opportuny
+            choice = 0
 
     return choice, memory
