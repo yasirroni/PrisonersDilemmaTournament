@@ -12,7 +12,7 @@ def strategy(history, memory):
     RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
     TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
     EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
-
+    # EXPECTED_MOVES_FORGIVING   = [0, 0, 0, 1, 1, 0]
     num_rounds = history.shape[1] # elapsed round
 
     choice = None # place holder
@@ -91,9 +91,9 @@ def strategy(history, memory):
                 "test_random" not in memory["strategy_history"]
                 and "fight_random" not in memory["strategy_history"]
             ):
-                if num_rounds >= VERY_LONG_WINDOW:
-                    opponent_moves = history[1, -LONG_WINDOW:]
-                    our_shifted_move = history[0, -(LONG_WINDOW+1):(num_rounds-1)]
+                if num_rounds >= LONG_WINDOW:
+                    opponent_moves = history[1, -(LONG_WINDOW-1):]
+                    our_shifted_move = history[0, -(LONG_WINDOW):(num_rounds-1)]
 
                     diff = opponent_moves - our_shifted_move
                     unprovoked_defections_rate = (diff == 1).sum() / LONG_WINDOW
@@ -117,20 +117,18 @@ def strategy(history, memory):
 
             # defector (always) in the middle of the game
             if num_rounds >= VERY_LONG_WINDOW:
-                if memory["strategy"] == None:
-                    opponent_moves = history[1, -MEDIUM_WINDOW:]
-                else:
-                    opponent_moves = history[1, -LONG_WINDOW:]
+                if "test_random" not in memory["strategy_history"]:
+                    if memory["strategy"] == None:
+                        opponent_moves = history[1, -MEDIUM_WINDOW:]
+                    else:
+                        opponent_moves = history[1, -LONG_WINDOW:]
 
-                if sum(opponent_moves) == 0:
-                    memory["previous_strategy"] = memory["strategy"]
-                    memory["strategy"] = "fight_defector"
-                    if "fight_defector" not in memory["strategy"]:
-                        memory["strategy_history"].append(memory["strategy"])
-                        memory["strategy_history"].append(memory["strategy"])
+                    if sum(opponent_moves) == 0:
+                        memory["previous_strategy"] = memory["strategy"]
+                        memory["strategy"] = "fight_defector"
+                        if "fight_defector" not in memory["strategy"]:
+                            memory["strategy_history"].append(memory["strategy"])
             
-            # TODO: detect opportunistic defector
-
     # strategy decision and execution
     if memory["strategy"] == "test_random":
         if memory["counter"] == 0:
@@ -141,6 +139,14 @@ def strategy(history, memory):
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_opportunist"
                 memory["strategy_history"].append(memory["strategy"])
+            # elif opponent_moves == [0] * len(EXPECTED_MOVES_OPPORTUNIST): # might be joss
+            #     memory["previous_strategy"] = memory["strategy"]
+            #     memory["strategy"] = "nprtt_halflife"
+            #     memory["strategy_history"].append(memory["strategy"])
+            # elif opponent_moves == EXPECTED_MOVES_FORGIVING:
+            #     memory["previous_strategy"] = memory["strategy"]
+            #     memory["strategy"] = "nprtt_halflife"
+            #     memory["strategy_history"].append(memory["strategy"])
             else:
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_random"

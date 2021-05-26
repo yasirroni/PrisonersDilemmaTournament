@@ -283,6 +283,15 @@ if __name__ == "__main__":
             "fibonacciDefector",
             ])
 
+    EXCEPT_STRATEGY.extend([
+        "confusedTitForTat",
+        "opportunisticDefector-1",
+        "opportunisticDefector-2",
+        "opportunisticDefector-3",
+        "opportunisticDefector-4",
+        "opportunisticDefector-5",
+        ])
+
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
     SINGLE_VERSUS_EVERYONE_RESULT = True
@@ -295,7 +304,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["nprttStudent-halflife", "switcher"]
+    # pair = ["nprttStudent-halflife", "joss"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)
