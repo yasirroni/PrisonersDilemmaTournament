@@ -13,9 +13,6 @@ def strategy(history, memory):
     TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
     EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
 
-    # 011011 # if I already 2 times cooperate, defect. If enemy defect, also defect, except i defect t-2.
-    # 101101
-
     num_rounds = history.shape[1] # elapsed round
 
     choice = None # place holder
@@ -120,7 +117,11 @@ def strategy(history, memory):
 
             # defector (always) in the middle of the game
             if num_rounds >= VERY_LONG_WINDOW:
-                opponent_moves = history[1, -MEDIUM_WINDOW:]
+                if memory["strategy"] == None:
+                    opponent_moves = history[1, -MEDIUM_WINDOW:]
+                else:
+                    opponent_moves = history[1, -LONG_WINDOW:]
+
                 if sum(opponent_moves) == 0:
                     memory["previous_strategy"] = memory["strategy"]
                     memory["strategy"] = "fight_defector"
@@ -143,6 +144,7 @@ def strategy(history, memory):
             else:
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_random"
+                memory["counter"] =  num_rounds
                 memory["strategy_history"].append(memory["strategy"])
 
         elif memory["counter"] > 0:
@@ -151,8 +153,15 @@ def strategy(history, memory):
 
     if memory["strategy"] == "fight_random":
         choice = 0
-        if num_rounds >= MEDIUM_WINDOW:
-            opponent_moves = history[1, -MEDIUM_WINDOW:]
+        if num_rounds >= memory["counter"] + MEDIUM_WINDOW:
+            opponent_moves = history[1, memory["counter"]:]
+            if numpy.sum(opponent_moves) == 0:
+                # random should never always defect
+                memory["previous_strategy"] = memory["strategy"]
+                memory["strategy"] = "nprtt_halflife"
+                memory["strategy_history"].append(memory["strategy"])
+        if num_rounds >= LONG_WINDOW:
+            opponent_moves = history[1, -LONG_WINDOW:]
             if numpy.sum(opponent_moves) == 0:
                 # random should never always defect
                 memory["previous_strategy"] = memory["strategy"]
@@ -167,6 +176,9 @@ def strategy(history, memory):
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "nprtt_halflife"
                 memory["strategy_history"].append(memory["strategy"])
+            elif numpy.sum(history[:, -2:]) == 0:
+                # must break D/D loop
+                choice = 1
             else:
                 choice, _ = forgivingDefector(history, memory)  
 

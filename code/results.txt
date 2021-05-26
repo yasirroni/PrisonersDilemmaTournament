@@ -8312,7 +8312,7 @@ Final score for confusedTitForTat: 0.3862660944206008583690987124
 Final score for nprttStudent-halflife: 4.527896995708154506437768240
 Winner: nprttStudent-halflife
 Final memory for confusedTitForTat: None
-Final memory for nprttStudent-halflife: {'sin': 20, 'strategy': 'fight_random', 'counter': 0, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'peace', 'num_war': 10, 'num_piece': 11, 'previous_strategy': 'test_random'}
+Final memory for nprttStudent-halflife: {'sin': 20, 'strategy': 'fight_random', 'counter': 39, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'peace', 'num_war': 10, 'num_piece': 11, 'previous_strategy': 'test_random'}
 
 confusedTitForTat (P1)  VS.  nprttStudent (P2)
 C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C D D C C 
@@ -16415,13 +16415,13 @@ Final memory for joss: None
 Final memory for nprtt: None
 
 joss (P1)  VS.  nprttStudent-halflife (P2)
-C C C D C D C C C C C C C C C C C C C C C C C C C C C C C D C D D C D C C C C C D C D D C D D D C C D C C D C C D C C D C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C D C C D C C C C C C C D C C D D D C C D C C D C C D C C D C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-Final score for joss: 1.497907949790794979079497908
-Final score for nprttStudent-halflife: 1.393305439330543933054393305
+C C C D C D C C C C C C C C C C C C C C C C C C C C C C C D C D D C D C C C C C D C D D C D D D C C D C C D C C D C C D C D D D C D C C D C C D C C D C D D D C D C C D C C D C C D C C D C C D C C D D C D C C D C C D C C D C C D C C D D C D C C D C C D C C D C C D D C D C C D C C D C C D C C D C D D D C D C C D C C D C C D C D D D C D C C D C C D C C D C C D C C D C C D C C D C C D D C D C C D D C D C C D C C D C D D D C D C C D C D D D D D D C D C C D C C D C C D C C D C C 
+C C C C D C C C C C C C C C C C C C C C C C C C C C C C C C D C C D C C C C C C C D C C D D D C C D C C D C C D C C D C C D D C D C C D C C D C C D C C D D C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D D C D C C D C C D C C D C C D D C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D C C D D C D C C D C C D D C D D C D C C D C C D C C D C C D C C D 
+Final score for joss: 2.740585774058577405857740586
+Final score for nprttStudent-halflife: 2.405857740585774058577405858
 Winner: joss
 Final memory for joss: None
-Final memory for nprttStudent-halflife: {'sin': 193, 'strategy': 'fight_defector', 'counter': 0, 'strategy_history': ['test_random', 'fight_opportunist'], 'battle_state': 'war', 'num_war': 13, 'num_piece': 13, 'previous_strategy': 'fight_defector'}
+Final memory for nprttStudent-halflife: {'sin': 94, 'strategy': 'fight_opportunist', 'counter': 0, 'strategy_history': ['test_random', 'fight_opportunist'], 'battle_state': 'peace_started', 'num_war': 70, 'num_piece': 71, 'previous_strategy': 'test_random'}
 
 joss (P1)  VS.  nprttStudent (P2)
 C C D C D D C D C C C C C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C C C C D C D C C C C C D D D D C C C D C D C C C C D C D C C C C C C C C C C C D C D C C C C C C C C C C C C C C D C D C D C D C C C D D D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D D D D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D D D D C C C C C C C C C C C C C C C C C C D C D C C C C C C C C C C C C C D C D C C C C D C D D C D D C D C C C D C D C C C C C C C C C C C C C C C C C C C C C C C C C C C C C D C D D C D C C C C C C C C D C D C C C D D D D D C D C C C C C C D C D D C D C C C C C C C C C C D C D C C C C C D C D C C C D C D D C D C C C C C C C C C D C D C C C C C C C C C C D C D C C C D C D C C C C C C C C D C D C C 
@@ -20015,12 +20015,12 @@ Final memory for nprttStudent-halflife: {'sin': 310, 'strategy': 'fight_defector
 Final memory for opportunisticDefector-1: None
 
 nprttStudent-halflife (P1)  VS.  opportunisticDefector-2 (P2)
-C C C D D C C C D D C C C D D C C C D D C D C D C D C D C D C D C D D D C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-C C D D D D C D D D D C D D D D C D D D D C D C D C D C D C D C D C D D D C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
-Final score for nprttStudent-halflife: 1.102880658436213991769547325
-Final score for opportunisticDefector-2: 1.267489711934156378600823045
+C C C D D C C C D D C C C D D C C C D D C D C D C D C D C D C D C D D D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D D C D C C D 
+C C D D D D C D D D D C D D D D C D D D D C D C D C D C D C D C D C D D D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D D D C D C D 
+Final score for nprttStudent-halflife: 1.662551440329218106995884774
+Final score for opportunisticDefector-2: 2.526748971193415637860082305
 Winner: opportunisticDefector-2
-Final memory for nprttStudent-halflife: {'sin': 229, 'strategy': 'fight_defector', 'counter': 0, 'strategy_history': ['test_random', 'fight_opportunist'], 'battle_state': 'war', 'num_war': 12, 'num_piece': 12, 'previous_strategy': 'fight_defector'}
+Final memory for nprttStudent-halflife: {'sin': 161, 'strategy': 'fight_opportunist', 'counter': 0, 'strategy_history': ['test_random', 'fight_opportunist'], 'battle_state': 'peace_started', 'num_war': 79, 'num_piece': 80, 'previous_strategy': 'test_random'}
 Final memory for opportunisticDefector-2: None
 
 nprttStudent-halflife (P1)  VS.  opportunisticDefector-3 (P2)
@@ -20096,12 +20096,12 @@ Final memory for nprttStudent-halflife: {'sin': 0, 'strategy': None, 'counter': 
 Final memory for punitiveSelfAwareTitForTat: True
 
 nprttStudent-halflife (P1)  VS.  randomChoice (P2)
-C C D D C C C D D C C C C C C C D C C C C C C C C D C C C D D C C C C D D D C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D C C D D D D C C D C C D C D C C C C D D C C C C D D D D D C C D D D C 
+C C D D C C C D D C C C C C C C D C C C C C C C C D C C C D D C C C C D D D C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D 
 C D D C D C D D C C C C C C C D C C C C C C C C D C D C D D D D C C D D C C C C D D C D C C C D D C C C C C D D C D C C D D C D C C D D D C D C C C C D C D C D C D D C C C C D D C C C D C D C C D C C D D C C C C D D D D C C C D C C C C D D C D C D C D C C C D D D D D D C C C C C C C C D D C D D C C D D D C D C D C D C C C C C C D D D D C C D C C D D D C C D C D D D D D D D D C C D D D D C C D C C D C D C C C C D D C C C C D D D D D C C D D D C C 
-Final score for nprttStudent-halflife: 2.857777777777777777777777778
-Final score for randomChoice: 1.146666666666666666666666667
+Final score for nprttStudent-halflife: 2.986666666666666666666666667
+Final score for randomChoice: 0.8755555555555555555555555556
 Winner: nprttStudent-halflife
-Final memory for nprttStudent-halflife: {'sin': 101, 'strategy': 'fight_defector', 'counter': 0, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'peace_started', 'num_war': 51, 'num_piece': 52, 'previous_strategy': 'fight_defector'}
+Final memory for nprttStudent-halflife: {'sin': 101, 'strategy': 'fight_random', 'counter': 40, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'peace_started', 'num_war': 51, 'num_piece': 52, 'previous_strategy': 'test_random'}
 Final memory for randomChoice: None
 
 nprttStudent-halflife (P1)  VS.  randomHistory (P2)
@@ -20218,7 +20218,7 @@ C C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C D C 
 Final score for nprttStudent-halflife: 1.244019138755980861244019139
 Final score for switcher: 1.363636363636363636363636364
 Winner: switcher
-Final memory for nprttStudent-halflife: {'sin': 186, 'strategy': 'fight_defector', 'counter': 0, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'war', 'num_war': 21, 'num_piece': 21, 'previous_strategy': 'fight_defector'}
+Final memory for nprttStudent-halflife: {'sin': 186, 'strategy': 'fight_defector', 'counter': 38, 'strategy_history': ['test_random', 'fight_random'], 'battle_state': 'war', 'num_war': 21, 'num_piece': 21, 'previous_strategy': 'fight_defector'}
 Final memory for switcher: [True, 1]
 
 nprttStudent-halflife (P1)  VS.  tickedOffCopycat (P2)
@@ -25651,7 +25651,7 @@ Final memory for worst: [1, 0.7224999999999999, 0.7224999999999999, 0.7224999999
 
 
 TOTAL SCORES
-#1: nprttStudent-halflife:   211.298  (2.817 average)
+#1: nprttStudent-halflife:   212.999  (2.840 average)
 #2: nprtt-halflife:          208.912  (2.785 average)
 #3: FallenAngel:             208.822  (2.784 average)
 #4: nprtt:                   208.655  (2.782 average)
@@ -25714,8 +25714,8 @@ TOTAL SCORES
 #61: grimTrigger:             179.988  (2.400 average)
 #62: ftft:                    179.171  (2.389 average)
 #63: properOpportunisticDefector-3: 165.956  (2.213 average)
-#64: joss:                    159.222  (2.123 average)
-#65: randomChoice:            155.951  (2.079 average)
+#64: joss:                    160.465  (2.140 average)
+#65: randomChoice:            155.680  (2.076 average)
 #66: windowed:                155.313  (2.071 average)
 #67: alwaysCooperate:         151.362  (2.018 average)
 #68: opportunisticDefector-5: 145.578  (1.941 average)
@@ -25723,7 +25723,7 @@ TOTAL SCORES
 #70: opportunisticDefector-4: 137.282  (1.830 average)
 #71: opportunisticDefector-3: 129.477  (1.726 average)
 #72: fodnprtthl:              126.889  (1.692 average)
-#73: opportunisticDefector-2: 122.934  (1.639 average)
+#73: opportunisticDefector-2: 124.193  (1.656 average)
 #74: opportunisticDefector-1: 119.539  (1.594 average)
 #75: worst:                   103.692  (1.383 average)
 #76: alwaysDefect:            103.493  (1.380 average)
