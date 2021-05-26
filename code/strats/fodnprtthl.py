@@ -18,10 +18,10 @@ def strategy(history, memory):
 
     if num_rounds >= 2:
         our_second_last_move = history[0, -2]
-        opponentsecond_last_move = history[1, -2]
+        opponent_second_last_move = history[1, -2]
     else:
         our_second_last_move = 1
-        opponentsecond_last_move = 1
+        opponent_second_last_move = 1
         
 
     HALF_LIFE = 20 
@@ -48,7 +48,7 @@ def strategy(history, memory):
         choice = 0
 
         # forgive if their defect because of our defect when they are not
-        if our_last_move == 1 and our_second_last_move == 0 and opponentsecond_last_move == 1:
+        if our_last_move == 1 and our_second_last_move == 0 and opponent_second_last_move == 1:
             # [
             #   [0, 1],
             #   [1, X]
