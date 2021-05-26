@@ -290,6 +290,8 @@ if __name__ == "__main__":
         "opportunisticDefector-3",
         "opportunisticDefector-4",
         "opportunisticDefector-5",
+        "fodnprtthl",
+        "properOpportunisticDefector-3"
         ])
 
     ## FULL PAIRING TOURNAMENT:
