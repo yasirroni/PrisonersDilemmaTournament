@@ -11,17 +11,17 @@ def strategy(history, memory):
     # get oponets last move
     if num_rounds >= 1:
         our_last_move = history[0, -1]
-        opponents_last_move = history[1, -1]
+        opponentlast_move = history[1, -1]
     else:
         our_last_move = 1
-        opponents_last_move = 1
+        opponentlast_move = 1
 
     if num_rounds >= 2:
         our_second_last_move = history[0, -2]
-        opponents_second_last_move = history[1, -2]
+        opponentsecond_last_move = history[1, -2]
     else:
         our_second_last_move = 1
-        opponents_second_last_move = 1
+        opponentsecond_last_move = 1
         
 
     HALF_LIFE = 20 
@@ -43,12 +43,12 @@ def strategy(history, memory):
     # default
     choice = 1
 
-    if opponents_last_move == 0: # opponent defect
+    if opponentlast_move == 0: # opponent defect
         # counter defect with defect
         choice = 0
 
         # forgive if their defect because of our defect when they are not
-        if history[0, -1] == 1 and history[0, -2] == 0 and history[1, -2] == 1:
+        if our_last_move == 1 and our_second_last_move == 0 and opponentsecond_last_move == 1:
             # [
             #   [0, 1],
             #   [1, X]
@@ -59,8 +59,9 @@ def strategy(history, memory):
                 # should not forgive because they had done too much
                 choice = 0
 
-    else: # opponents_last_move == 1
-        if numpy.sum(history[1, -OPPORTUNITY_WINDOW:]) == OPPORTUNITY_WINDOW:
-            choice = 0
+    else: # opponentlast_move == 1
+        if num_rounds >= OPPORTUNITY_WINDOW:
+            if numpy.sum(history[1, -OPPORTUNITY_WINDOW:]) == OPPORTUNITY_WINDOW:
+                choice = 0
 
     return choice, memory
