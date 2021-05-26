@@ -8,14 +8,17 @@ def strategy(history, memory):
     LONG_WINDOW = 16
     VERY_LONG_WINDOW = 32
 
-
-
+    UNPROVOKED_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
     RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
-    TEST_RANDOM_SCHEDULE =   [0, 0, 0, 1, 1, 1, 0, 1]
-    EXPECTED_MOVES_NON_RANDOM = [0, 0, 0, 1, 1, 1, 0] # expected moves from non random
-    EXPECTED_MOVES_DEFECTOR_2 = [0, 0, 0, 1, 0, 0, 0] # expected moves from defector-2 or joss
-    EXPECTED_MOVES_DEFECTOR_3 = [0, 0, 0, 1, 1, 0, 0] # expected moves from defector-3 or joss
+    TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
+    EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
+
+    # 011011 # if I already 2 times cooperate, defect. If enemy defect, also defect, except i defect t-2.
+    # 101101
+
     num_rounds = history.shape[1] # elapsed round
+
+    choice = None # place holder
 
     if num_rounds == 0:
         memory = {}
@@ -32,18 +35,18 @@ def strategy(history, memory):
        
     # extract history move
     our_history = history[0, :]
-    oponents_history = history[1, :]
+    opponent_history = history[1, :]
 
     if num_rounds >= 1:
         our_last_move = our_history[-1]
-        opponents_last_move = oponents_history[-1]
+        opponents_last_move = opponent_history[-1]
     else:
         our_last_move = 1
         opponents_last_move = 1
 
     if num_rounds >= 2:
         our_second_last_move = our_history[-2]
-        opponents_second_last_move = oponents_history[-2]
+        opponents_second_last_move = opponent_history[-2]
     else:
         our_second_last_move = 1
         opponents_second_last_move = 1
@@ -52,13 +55,13 @@ def strategy(history, memory):
     if num_rounds == 1:
         # first round logic
         if opponents_last_move == 1:
-            # enemy cooperate in first move
+            # opponent cooperate in first move
             memory["battle_state"] = "peace"
             memory["num_piece"] += 1
             choice = 1
             return choice, memory
         else:
-            # enemy defect in first move
+            # opponent defect in first move
             memory["sin"] += 1
             memory["battle_state"] = "war_started"
             memory["num_war"] += 1
@@ -76,7 +79,7 @@ def strategy(history, memory):
                 memory["battle_state"] = "peace"
 
         if opponents_last_move == 0:
-            # enemy defect in the last move
+            # opponent defect in the last move
             memory["sin"] += 1
 
             # betrayal?
@@ -92,10 +95,24 @@ def strategy(history, memory):
                 and "fight_random" not in memory["strategy_history"]
             ):
                 if num_rounds >= VERY_LONG_WINDOW:
-                    enemy_moves = history[1, :]
-                    flipped_enemy_move = numpy.abs(enemy_moves - 1)
-                    defection_rate_medium_window = numpy.average(flipped_enemy_move)
-                    if defection_rate_medium_window > (RANDOM_DEFECTION_RATE_THRESHOLD):
+                    opponent_moves = history[1, -LONG_WINDOW:]
+                    our_shifted_move = history[0, -(LONG_WINDOW+1):(num_rounds-1)]
+
+                    diff = opponent_moves - our_shifted_move
+                    unprovoked_defections_rate = (diff == 1).sum() / LONG_WINDOW
+
+                    flipped_opponent_move = numpy.abs(opponent_moves - 1)
+                    defection_rate = numpy.average(flipped_opponent_move)
+
+                    # too much unprovoked defection
+                    if unprovoked_defections_rate > UNPROVOKED_DEFECTION_RATE_THRESHOLD:
+                        memory["previous_strategy"] = memory["strategy"]
+                        memory["strategy"] = "test_random"
+                        memory["strategy_history"].append(memory["strategy"])
+                        memory["counter"] = len(TEST_RANDOM_SCHEDULE)
+
+                    # too much defection rate
+                    elif defection_rate > (RANDOM_DEFECTION_RATE_THRESHOLD):
                         memory["previous_strategy"] = memory["strategy"]
                         memory["strategy"] = "test_random"
                         memory["strategy_history"].append(memory["strategy"])
@@ -103,8 +120,8 @@ def strategy(history, memory):
 
             # defector (always) in the middle of the game
             if num_rounds >= VERY_LONG_WINDOW:
-                enemy_moves = history[1, -MEDIUM_WINDOW:]
-                if sum(enemy_moves) == 0:
+                opponent_moves = history[1, -MEDIUM_WINDOW:]
+                if sum(opponent_moves) == 0:
                     memory["previous_strategy"] = memory["strategy"]
                     memory["strategy"] = "fight_defector"
                     if "fight_defector" not in memory["strategy"]:
@@ -113,48 +130,56 @@ def strategy(history, memory):
             
             # TODO: detect opportunistic defector
 
-    # strategy decision
+    # strategy decision and execution
     if memory["strategy"] == "test_random":
         if memory["counter"] == 0:
             # evaluation
             window = len(TEST_RANDOM_SCHEDULE) - 1
-            if oponents_history[-window:].tolist() == EXPECTED_MOVES_NON_RANDOM:
+            opponent_moves = opponent_history[-window:].tolist()
+            if  opponent_moves == EXPECTED_MOVES_OPPORTUNIST:
                 memory["previous_strategy"] = memory["strategy"]
-                memory["strategy"] = None
+                memory["strategy"] = "fight_opportunist"
+                memory["strategy_history"].append(memory["strategy"])
             else:
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_random"
                 memory["strategy_history"].append(memory["strategy"])
 
-    # strategy execution
+        elif memory["counter"] > 0:
+            choice = TEST_RANDOM_SCHEDULE[-memory["counter"]]
+            memory["counter"] += -1
+
+    if memory["strategy"] == "fight_random":
+        choice = 0
+        if num_rounds >= MEDIUM_WINDOW:
+            opponent_moves = history[1, -MEDIUM_WINDOW:]
+            if numpy.sum(opponent_moves) == 0:
+                # random should never always defect
+                memory["previous_strategy"] = memory["strategy"]
+                memory["strategy"] = "nprtt_halflife"
+                memory["strategy_history"].append(memory["strategy"])
+    
+    if memory["strategy"] == "fight_opportunist":
+        if num_rounds >= MEDIUM_WINDOW:
+            opponent_moves = history[1, -MEDIUM_WINDOW:]
+            if numpy.sum(opponent_moves) == 0:
+                # opportunist should never always defect
+                memory["previous_strategy"] = memory["strategy"]
+                memory["strategy"] = "nprtt_halflife"
+                memory["strategy_history"].append(memory["strategy"])
+            else:
+                choice, _ = forgivingDefector(history, memory)  
+
     if memory["strategy"] == "fight_defector":
         if opponents_last_move == 1:
             # want to make up?
-            choice = 1
             memory["previous_strategy"] = memory["strategy"]
             memory["strategy"] == None
         else:
             choice = 0
 
-    elif memory["strategy"] == "test_random":
-        if memory["counter"] > 0:
-            choice = TEST_RANDOM_SCHEDULE[-memory["counter"]]
-            memory["counter"] += -1
-
-    elif memory["strategy"] == "fight_random":
-        choice = 0
-        # random should never always defect
-        enemy_moves = history[1, -MEDIUM_WINDOW:]
-        if numpy.sum(enemy_moves) == 0:
-            memory["previous_strategy"] = memory["strategy"]
-            memory["strategy"] = "nprtt_halflife" # should consider make up strategy
-            memory["strategy_history"].append(memory["strategy"])
-    
-    # elif memory["strategy"] == "fight_opportunist":
-    #     choice, _ = sorryOpportunisticDefector()
-
     # default strategy
-    else: # memory["strategy"] == None or memory["strategy"] == "nprtt_halflife":
+    if memory["strategy"] == None or memory["strategy"] == "nprtt_halflife" or choice == None:
         choice, _ = nprtt_halflife(history, None)
 
     return choice, memory
@@ -214,36 +239,34 @@ def nprtt_halflife(history, memory):
 
     return choice, memory
 
-def sorryOpportunisticDefector(history, memory):
-    num_rounds = history.shape[1] # elapsed round
-
-    # get oponets last move
-    if num_rounds >= 1:
-        our_last_move = history[0, -1]
-        opponents_last_move = history[1, -1]
-    else:
-        our_last_move = 1
-        opponents_last_move = 1
-
-    if num_rounds >= 2:
-        our_second_last_move = history[0, -2]
-        opponents_second_last_move = history[1, -2]
-    else:
-        our_second_last_move = 1
-        opponents_second_last_move = 1
-
-    # default
+def forgivingDefector(history, memory):
+    # default cooperate
     choice = 1
-    if opponents_last_move == 0:
-        # counter defect with defect
-        choice = 0
-        if our_second_last_move == 0:
-            # forgive if it might be because our previous defect
-            choice = 1
 
-    else: # opponents_last_move == 1
-        if our_last_move == 1:
-            # opportuny
+    # revenge
+    if history.shape[1] >= 1:
+        # if enemy defected revange
+        if history[1,-1] == 0: 
             choice = 0
 
-    return choice, memory
+    # forgive
+    if history.shape[1] >= 2 and choice == 0:
+        # forgive if their defect because of our defect when they are not
+        if history[0, -1] == 1 and history[0, -2] == 0 and history[1, -2] == 1:
+            # [
+            #   [0, 1],
+            #   [1, X]
+            # ]
+            choice = 1
+
+    # defector 
+    if history.shape[1] >= 2 and choice == 1:
+        # defect if I already cooperate two times
+        if history[0, -2] == 1 and history[0, -1] == 1:
+            # [
+            #   [1, 1],
+            #   [X, X]
+            # ]
+            choice = 0
+
+    return choice, None
