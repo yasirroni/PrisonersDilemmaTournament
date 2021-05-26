@@ -248,8 +248,8 @@ if __name__ == "__main__":
     random.seed(SEED)
 
     # EXCEPT_STRATEGY
-    NO_ALWAYS = True
-    NO_PURE_RANDOM = True
+    NO_ALWAYS = False
+    NO_PURE_RANDOM = False
     NO_MACHINE_LEARNING = True
     NO_PATTERN_BASED_STRATEGY = True
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
     
     if NO_PURE_RANDOM:
         EXCEPT_STRATEGY.extend([
-            "random",
+            "randomChoice", # renamed random to randomChoice
             ])
 
     if NO_MACHINE_LEARNING:
@@ -295,7 +295,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["nprttStudent", "opportunisticDefector"]
+    # pair = ["nprttStudent2", "randomChoice"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)
