@@ -244,14 +244,15 @@ if __name__ == "__main__":
     H2H_FILE = "headToHead.csv"
 
     # seed for repeatability
-    SEED = 42
+    SEED = 69
     random.seed(SEED)
 
     # EXCEPT_STRATEGY
     NO_ALWAYS = False
     NO_PURE_RANDOM = False
-    NO_MACHINE_LEARNING = True
+    NO_MACHINE_LEARNING = False
     NO_PATTERN_BASED_STRATEGY = True
+    NO_ADVERSARY_BASED_STRATEGY = False
 
     EXCEPT_STRATEGY = []
 
@@ -282,17 +283,18 @@ if __name__ == "__main__":
             "cdd",
             "fibonacciDefector",
             ])
-
-    EXCEPT_STRATEGY.extend([
-        "confusedTitForTat",
-        "opportunisticDefector-1",
-        "opportunisticDefector-2",
-        "opportunisticDefector-3",
-        "opportunisticDefector-4",
-        "opportunisticDefector-5",
-        "fodnprtthl",
-        "properOpportunisticDefector-3"
-        ])
+    if NO_ADVERSARY_BASED_STRATEGY:
+        EXCEPT_STRATEGY.extend([
+            "confusedTitForTat",
+            "opportunisticDefector-1",
+            "opportunisticDefector-2",
+            "opportunisticDefector-3",
+            "opportunisticDefector-4",
+            "opportunisticDefector-5",
+            "fodnprtthl",
+            "properOpportunisticDefector-3",
+            "windowed",
+            ])
 
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
@@ -306,7 +308,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["nprttStudent-halflife", "joss"]
+    # pair = ["nprttt", "joss"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)
