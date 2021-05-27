@@ -1,4 +1,3 @@
-from decimal import Decimal
 import numpy
 
 
@@ -31,7 +30,7 @@ def strategy(history, memory):
     guides the 1/2 cutoff for the Reflective trait.
     """
     HALF_LIFE = 20
-    STEADY_THRESHOLD = Decimal(1) / Decimal(2)
+    STEADY_THRESHOLD = 1 / 2
     DECAY_MULTIPLIER = 1 - STEADY_THRESHOLD 
     LONG_WINDOW = 16
     UNPROVOKED_DEFECTION_RATE_THRESHOLD = 0.4
@@ -70,11 +69,9 @@ def strategy(history, memory):
         opponent_defection_rate = 0
     else:
         opponent_stats = dict(zip(*numpy.unique(opponent_history, return_counts=True)))
-        opponent_defection_rate = Decimal(int(opponent_stats.get(0, 0))) / Decimal(
-            num_rounds
-        )
+        opponent_defection_rate = int(opponent_stats.get(0, 0)) / num_rounds
 
-    be_patient = opponent_defection_rate <= Decimal(MAX_DEFECTION_THRESHOLD)
+    be_patient = opponent_defection_rate <= MAX_DEFECTION_THRESHOLD
 
     choice = (
         1
