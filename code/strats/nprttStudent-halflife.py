@@ -12,6 +12,8 @@ def strategy(history, memory):
     RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
     TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
     EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
+    EXPECTED_MOVES_JOSS =        [0, 0, 0, 0] # expected moves from joss
+    TIE_BREAKER_LIMIT = 2
 
     num_rounds = history.shape[1] # elapsed round
 
@@ -105,8 +107,15 @@ def strategy(history, memory):
                     flipped_opponent_move = numpy.abs(opponent_moves - 1)
                     defection_rate = numpy.average(flipped_opponent_move)
 
+                    # never cooperated or only once:
+                    if numpy.sum(opponent_moves) <= 1:
+                        memory["previous_strategy"] = memory["strategy"]
+                        memory["strategy"] = "fight_defector"
+                        if "fight_defector" not in memory["strategy"]:
+                            memory["strategy_history"].append(memory["strategy"])
+
                     # too much unprovoked defection
-                    if unprovoked_defections_rate > UNPROVOKED_DEFECTION_RATE_THRESHOLD:
+                    elif unprovoked_defections_rate > UNPROVOKED_DEFECTION_RATE_THRESHOLD:
                         memory["previous_strategy"] = memory["strategy"]
                         memory["strategy"] = "test_random"
                         memory["strategy_history"].append(memory["strategy"])
@@ -143,6 +152,11 @@ def strategy(history, memory):
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_opportunist"
                 memory["strategy_history"].append(memory["strategy"])
+            elif opponent_moves == EXPECTED_MOVES_JOSS:
+                memory["previous_strategy"] = memory["strategy"]
+                memory["strategy"] = "tieBreakerTitForTat"
+                memory["strategy_history"].append(memory["strategy"])
+                memory["counter"] == 0
             else:
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_random"
@@ -191,6 +205,16 @@ def strategy(history, memory):
             memory["strategy"] == None
         else:
             choice = 0
+
+    if memory["strategy"] == "tieBreakerTitForTat":
+        if memory["counter"] >= TIE_BREAKER_LIMIT:
+            # too much tie
+            memory["previous_strategy"] = memory["strategy"]
+            memory["strategy"] = "nprtt_halflife"
+            memory["strategy_history"].append(memory["strategy"])
+        else:
+            choice, memory["counter"] = tieBreakerTitForTat(history, memory["counter"])
+
 
     # default strategy
     if memory["strategy"] == None or memory["strategy"] == "nprtt_halflife" or choice == None:
@@ -253,6 +277,7 @@ def nprtt_halflife(history, memory):
 
     return choice, memory
 
+
 def forgivingDefector(history, memory):
     # default cooperate
     choice = 1
@@ -284,3 +309,42 @@ def forgivingDefector(history, memory):
             choice = 0
 
     return choice, None
+
+
+def tieBreakerTitForTat(history, memory):
+    # store tie-breaker counter
+    if memory == None:
+        memory = 0
+
+    # default cooperate
+    choice = 1
+
+    # revenge
+    if history.shape[1] >= 1:
+        # if enemy defected revange
+        if history[1,-1] == 0: 
+            choice = 0
+
+    # forgive
+    if history.shape[1] >= 2 and choice == 0:
+        # forgive if their defect because of our defect when they are not
+        if history[0, -1] == 1 and history[0, -2] == 0 and history[1, -2] == 1:
+            # [
+            #   [0, 1],
+            #   [1, X]
+            # ]
+            choice = 1
+
+        # forgive (tieBreaker) if both have been defecting two times in a row
+        if (history[0, -1] == 0 
+        and history[0, -2] == 0 
+        and history[1, -1] == 0
+        and history[1, -2] == 0):
+            # [
+            #   [0, 0],
+            #   [0, 0]
+            # ]
+            choice = 1
+            memory += 1
+
+    return choice, memory
