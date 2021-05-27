@@ -1,5 +1,5 @@
-from decimal import Decimal
 import numpy
+
 
 # nprtt but have some experience about others
 def strategy(history, memory):
@@ -8,8 +8,8 @@ def strategy(history, memory):
     LONG_WINDOW = 16
     VERY_LONG_WINDOW = 32
 
-    UNPROVOKED_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
-    RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
+    UNPROVOKED_DEFECTION_RATE_THRESHOLD = 0.4
+    RANDOM_DEFECTION_RATE_THRESHOLD = 0.4
     TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
     EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
     EXPECTED_MOVES_JOSS =        [0, 0, 0, 0] # expected moves from joss
@@ -263,11 +263,9 @@ def nprtt_halflife(history, memory):
         opponent_defection_rate = 0
     else:
         opponent_stats = dict(zip(*numpy.unique(opponent_history, return_counts=True)))
-        opponent_defection_rate = Decimal(int(opponent_stats.get(0, 0))) / Decimal(
-            num_rounds
-        )
+        opponent_defection_rate = int(opponent_stats.get(0, 0)) / num_rounds
 
-    be_patient = opponent_defection_rate <= Decimal(MAX_DEFECTION_THRESHOLD)
+    be_patient = opponent_defection_rate <= MAX_DEFECTION_THRESHOLD
 
     choice = (
         1
