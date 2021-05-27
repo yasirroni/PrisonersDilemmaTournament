@@ -283,6 +283,7 @@ if __name__ == "__main__":
             "cdd",
             "fibonacciDefector",
             ])
+
     if NO_ADVERSARY_BASED_STRATEGY:
         EXCEPT_STRATEGY.extend([
             "confusedTitForTat",
@@ -308,7 +309,7 @@ if __name__ == "__main__":
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    # pair = ["nprttt", "joss"]
+    # pair = ["nprstt", "joss"]
     # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
     # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
     # print("Done with everything! Results file written to " + RESULTS_FILE)

@@ -92,11 +92,15 @@ def strategy(history, memory):
                 and "fight_random" not in memory["strategy_history"]
             ):
                 if num_rounds >= LONG_WINDOW:
-                    opponent_moves = history[1, -(LONG_WINDOW-1):]
                     our_shifted_move = history[0, -(LONG_WINDOW):(num_rounds-1)]
+                    opponent_moves = history[1, -(LONG_WINDOW-1):]
 
-                    diff = opponent_moves - our_shifted_move
-                    unprovoked_defections_rate = (diff == 1).sum() / LONG_WINDOW
+                    diff = our_shifted_move - opponent_moves 
+                    num_cooperation = (opponent_moves == 1).sum()
+                    if num_cooperation == 0:
+                        unprovoked_defections_rate = numpy.inf
+                    else:
+                        unprovoked_defections_rate = (diff == 1).sum() / (opponent_moves == 1).sum()
 
                     flipped_opponent_move = numpy.abs(opponent_moves - 1)
                     defection_rate = numpy.average(flipped_opponent_move)
