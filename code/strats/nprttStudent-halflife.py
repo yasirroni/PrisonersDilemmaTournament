@@ -12,7 +12,7 @@ def strategy(history, memory):
     RANDOM_DEFECTION_RATE_THRESHOLD = Decimal(0.4)
     TEST_RANDOM_SCHEDULE =    [0, 0, 0, 1, 1]
     EXPECTED_MOVES_OPPORTUNIST = [0, 0, 0, 1] # expected moves from opportunist / joss / titForTat
-    # EXPECTED_MOVES_FORGIVING   = [0, 0, 0, 1, 1, 0]
+
     num_rounds = history.shape[1] # elapsed round
 
     choice = None # place holder
@@ -139,14 +139,6 @@ def strategy(history, memory):
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_opportunist"
                 memory["strategy_history"].append(memory["strategy"])
-            # elif opponent_moves == [0] * len(EXPECTED_MOVES_OPPORTUNIST): # might be joss
-            #     memory["previous_strategy"] = memory["strategy"]
-            #     memory["strategy"] = "nprtt_halflife"
-            #     memory["strategy_history"].append(memory["strategy"])
-            # elif opponent_moves == EXPECTED_MOVES_FORGIVING:
-            #     memory["previous_strategy"] = memory["strategy"]
-            #     memory["strategy"] = "nprtt_halflife"
-            #     memory["strategy_history"].append(memory["strategy"])
             else:
                 memory["previous_strategy"] = memory["strategy"]
                 memory["strategy"] = "fight_random"

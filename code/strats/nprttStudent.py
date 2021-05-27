@@ -60,38 +60,11 @@ def strategy(history, memory):
             memory["battle_state"] = "third_war"
             memory["strategy"] = "nprtt"
 
-
-        # # maybe fighting detective?
-        # if num_rounds <= DETECTIVE_WINDOW:
-        #     if memory["sin"] <= 2 and "detective" not in memory["strategy_history"]:
-        #         # enemy first time to defect
-        #         memory["strategy"] = "detective"
-        #         memory["strategy_history"].extend(memory["strategy"])
-        #         memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
-
-        # # maybe fighting delayedDetective?
-        # if num_rounds > DETECTIVE_WINDOW:
-        #     if memory["sin"] <= 2 and "detective" not in memory["strategy_history"]:
-        #         # enemy first time to defect
-        #         memory["strategy"] = "detective"
-        #         memory["strategy_history"].extend(memory["strategy"])
-        #         memory["counter"] = len(TEST_DETECTIVE_SCHEDULE)
-
-        # maybe fighting defector?
+         # maybe fighting defector?
         if num_rounds == SHORT_WINDOW:
             if memory["sin"] == num_rounds:
                 memory["strategy"] = "fight_defector"
                 memory["strategy_history"].extend(memory["strategy"])
-
-        # # forgive early stage
-        # if num_rounds <= LONG_WINDOW:
-        #     if memory["strategy"] == None:
-        #         if "peaceMaker" not in memory["strategy_history"]:
-        #             # choice = 1
-        #             memory["strategy"] = "peaceMaker"
-        #             memory["strategy_history"].extend(memory["strategy"])
-        # elif memory["strategy"] == "peaceMaker":
-        #     memory["strategy"] = None
 
         # maybe fighting random?
         if num_rounds >= VERY_LONG_WINDOW:
@@ -117,18 +90,6 @@ def strategy(history, memory):
     if memory["battle_state"] == "second_war":
         if our_last_move == 1 and opponents_last_move == 1:
             memory["battle_state"] = "third_peace"
-            memory["strategy"] = None
-
-    if memory["strategy"] == "detective":
-        # most detective is either:
-        #   1. defect at first round and have two more schedule
-        #   2. defect at second round and have two more schedule
-        #   3. defect at second round and have three more schedule
-        
-        if memory["counter"] > 0:
-            choice = TEST_DETECTIVE_SCHEDULE[memory["counter"]-1]
-            memory["counter"] -= 1
-        elif memory["counter"] <= 0:
             memory["strategy"] = None
 
     if memory["strategy"] == "fight_defector":
@@ -178,12 +139,7 @@ def strategy(history, memory):
             MAX_DEFECTION_THRESHOLD
             )
         
-    try:
-        return choice, memory
-    except:
-        print(memory)
-        print(choice)
-
+    return choice, memory
 
 def nprtt(history, memory, num_rounds, opponents_last_move, our_second_last_move, defection_threshold=0.5):
     """
