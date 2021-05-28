@@ -6,10 +6,10 @@ def strategy(history, memory):
         mem = []
         mem.append(False)
         mem.append(0)
-        return "cooperate", mem
+        return 1, mem
     mem = memory
     if mem[GRUDGE]:
-        return "defect", mem
+        return 0, mem
     if round >= 5:
         sin = 0
         for i in range(1, 5):
@@ -17,10 +17,10 @@ def strategy(history, memory):
                 sin += 1
             if sin == 4:
                 mem[GRUDGE] = True
-                return "defect", mem
+                return 0, mem
     if mem[LASTACTION] == 0:
         mem[LASTACTION] = 1
-        return "cooperate", mem
+        return 1, mem
     else:
         mem[LASTACTION] = 0
-        return "defect", mem
+        return 0, mem

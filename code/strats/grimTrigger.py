@@ -16,7 +16,7 @@ def strategy(history, memory):
             wronged = True
     
     if wronged:
-        return "defect", True
+        return 0, True
     else:
-        return "cooperate", False
+        return 1, False
     

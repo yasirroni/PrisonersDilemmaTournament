@@ -4,7 +4,7 @@
 # Reminder: For the history array, "cooperate" = 1, "defect" = 0
 
 def strategy(history, memory):
-    choice = "cooperate"
+    choice = 1
     if history.shape[1] >= 2 and history[1,-1] == 0 and history[1,-2] == 0: # We check the TWO most recent turns to see if BOTH were defections, and only then do we defect too.
-        choice = "defect"
+        choice = 0
     return choice, None

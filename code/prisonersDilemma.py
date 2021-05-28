@@ -140,24 +140,32 @@ def insertIntoNestedDict(nestedDict, keyA, keyB, value):
         nestedDict[keyA] = dict()
     nestedDict[keyA][keyB] = value
 
-def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exceptStrategy=[]):
-    print("Starting tournament, reading files from " + inFolder)
+def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exceptStrategy=[], singleVersusEveryoneResult=None):
+    print("Reading files from " + inFolder)
     scoreKeeper = {}
     headToHead = {}
 
     script_path = pathlib.Path(__file__).parent.absolute()
 
-    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=[])
+    STRATEGY_LIST = fetch_strategy(inFolder, exceptStrategy=exceptStrategy)
 
     for strategy in STRATEGY_LIST:
         scoreKeeper[strategy] = 0
 
     if isinstance(outFileResult, str):
-        script_path = pathlib.Path(__file__).parent.absolute()
         f = open(os.path.join(script_path, outFileResult),"w+")
     else:
         f = outFileResult
     
+    if singleVersusEveryoneResult:
+        for strategy in STRATEGY_LIST:
+            single_result_file = "results_" + strategy + ".txt"
+            single_output_path = os.path.join(script_path, single_result_file)
+            if os.path.exists(single_output_path):
+                os.remove(single_output_path)
+                print("REMOVED: " + single_output_path)
+    
+    print("Starting tournament...")
     for pair in itertools.combinations(STRATEGY_LIST, r=2):
         [roundHistory, scoresA, scoresB, memoryA, memoryB] = _runSinglePairingTournament(inFolder, pair)
 
@@ -167,6 +175,19 @@ def runFullPairingTournament(inFolder, outFileResult, outFileHead2Head=None, exc
         outputRoundResults(f, pair, roundHistory, scoresA, scoresB, memoryA, memoryB)
         insertIntoNestedDict(headToHead, pair[0], pair[1], scoresA)
         insertIntoNestedDict(headToHead, pair[1], pair[0], scoresB)
+
+        if singleVersusEveryoneResult:
+            single_result_file = "results_" + pair[0] + ".txt"
+            single_output_path = os.path.join(script_path, single_result_file)
+
+            with open(single_output_path, "a+") as single_file:
+                outputRoundResults(single_file, pair, roundHistory, scoresA, scoresB, memoryA, memoryB)
+            
+            single_result_file = "results_" + pair[1] + ".txt"
+            single_output_path = os.path.join(script_path, single_result_file)
+
+            with open(single_output_path, "a+") as single_file:
+                outputRoundResults(single_file, [pair[1], pair[0]], np.flip(roundHistory, 0), scoresB, scoresA, memoryB, memoryA)
 
     outputTournamentResults(f, STRATEGY_LIST, scoreKeeper)
         
@@ -217,22 +238,102 @@ def _runSinglePairingTournament(inFolder, pair):
     return roundHistory, scoresA, scoresB, memoryA, memoryB
 
 if __name__ == "__main__":
+    # files
     STRATEGY_FOLDER = "strats"
     RESULTS_FILE = "results.txt"
     H2H_FILE = "headToHead.csv"
 
     # seed for repeatability
-    SEED = 42
+    SEED = 69
     random.seed(SEED)
+
+    # EXCEPT_STRATEGY
+    NO_ALWAYS = False
+    NO_PURE_RANDOM = False
+    NO_MACHINE_LEARNING = False
+    NO_PATTERN_BASED_STRATEGY = True
+    NO_ADVERSARY_BASED_STRATEGY = False
+
+    EXCEPT_STRATEGY = []
+
+    if NO_ALWAYS:
+        EXCEPT_STRATEGY.extend([
+            "alwaysCooperate",
+            "alwaysDefect"
+            ])
+    
+    if NO_PURE_RANDOM:
+        EXCEPT_STRATEGY.extend([
+            "randomChoice", # renamed random to randomChoice
+            ])
+
+    if NO_MACHINE_LEARNING:
+        EXCEPT_STRATEGY.extend([
+            "oracle",
+            "ngrams2",
+            "ngrams2Betrayal",
+            "ngrams3"
+            ])
+
+    if NO_PATTERN_BASED_STRATEGY:
+        EXCEPT_STRATEGY.extend([
+            "odd",
+            "even",
+            "ccd",
+            "cdd",
+            "fibonacciDefector",
+            ])
+
+    if NO_ADVERSARY_BASED_STRATEGY:
+        EXCEPT_STRATEGY.extend([
+            "confusedTitForTat",
+            "opportunisticDefector-1",
+            "opportunisticDefector-2",
+            "opportunisticDefector-3",
+            "opportunisticDefector-4",
+            "opportunisticDefector-5",
+            "fodnprtthl",
+            "properOpportunisticDefector-3",
+            "windowed",
+            ])
 
     ## FULL PAIRING TOURNAMENT:
     RESULTS_FILE = "results.txt"
-    EXCEPT_STRATEGY = []
-    runFullPairingTournament(STRATEGY_FOLDER, RESULTS_FILE, H2H_FILE, EXCEPT_STRATEGY)
+    SINGLE_VERSUS_EVERYONE_RESULT = True
+    runFullPairingTournament(
+        STRATEGY_FOLDER, 
+        RESULTS_FILE, 
+        H2H_FILE, 
+        EXCEPT_STRATEGY, 
+        singleVersusEveryoneResult=SINGLE_VERSUS_EVERYONE_RESULT)
     print("Done with everything! Results file written to " + RESULTS_FILE)
 
     ## SINGLE PAIRING TOURNAMENT:
-    pair = ["cleverDetective", "clevererDetective"]
-    RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
-    runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
-    print("Done with everything! Results file written to " + RESULTS_FILE)
+    # pair = ["nprstt", "joss"]
+    # RESULTS_FILE = "results_" + pair[0] + "_" + pair[1] + ".txt"
+    # runSinglePairingTournament(STRATEGY_FOLDER, RESULTS_FILE, pair)
+    # print("Done with everything! Results file written to " + RESULTS_FILE)
+
+    ## MYSTRATEGY VS EVERYONE:
+    # MYSTRATEGY = "nprttStudent"
+    # EXCEPT_STRATEGY.append(MYSTRATEGY)
+    # STRATEGY_LIST = fetch_strategy(STRATEGY_FOLDER, exceptStrategy=EXCEPT_STRATEGY)
+    # RESULTS_FILE = "results_" + MYSTRATEGY + ".txt"
+
+    # SCRIPT_PATH = pathlib.Path(__file__).parent.absolute()
+    # OUTPUT_PATH = os.path.join(SCRIPT_PATH, RESULTS_FILE)
+    # if os.path.exists(OUTPUT_PATH):
+    #     os.remove(OUTPUT_PATH)
+    #     print("REMOVED: " + OUTPUT_PATH)
+        
+    # for strategy in STRATEGY_LIST:
+    #     f = open(OUTPUT_PATH, "a+")
+    #     pair = [MYSTRATEGY, strategy]
+    #     runSinglePairingTournament(STRATEGY_FOLDER, f, pair)
+    # print("Done with everything! Results file written to " + RESULTS_FILE)
+
+    # try: # for safety meassure
+    #     f.flush()
+    #     f.close()
+    # except:
+    #     pass

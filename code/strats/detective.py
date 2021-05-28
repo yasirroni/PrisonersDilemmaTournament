@@ -29,7 +29,7 @@ def strategy(history, memory):
     
     if gameLength >= 4:
         if shallIExploit:
-            choice = "defect"
+            choice = 0
         else:
             choice = history[1,-1] # Do Tit for Tat
     

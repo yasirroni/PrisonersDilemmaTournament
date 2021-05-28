@@ -5,12 +5,12 @@ import numpy as np
 
 def forgivingCopycat(history):
     round = history.shape[1]
-    choice = "cooperate"
+    choice = 1
     if history[1,-1] == 0:
-        choice = "defect"
-    if round > 3 and choice == "defect":
+        choice = 0
+    if round > 3 and choice == 0:
         if history [0, -1] == 1 and history [0,-2] == 0 and history [1, -2] == 1:
-            choice = "cooperate"
+            choice = 1
     return choice
 
 def strategy(history, memory):
@@ -25,7 +25,7 @@ def strategy(history, memory):
     small_defection_window = 15
     max_local_unprovoked_defections = 4  # too many unprovoked defections? random
     if num_rounds ==0:
-        return "cooperate", memory
+        return 1, memory
     if num_rounds < DELAY:  # intitial testing phase
         return forgivingCopycat(history), memory
 
